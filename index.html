@@ -4,1317 +4,80 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
-        <link href="https://cdn.lineicons.com/5.0/lineicons.css"
-            rel="stylesheet" />
-        <link rel="stylesheet"
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-            integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
-            crossorigin="anonymous">
-
-        <!-- ======= HEADER ======= -->
-        <style>
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 1.7;
-            word-break: break-word;
-            background: #02050a;
-            color: #a2a2a2;
-        }
-        .main_menu{
-            width: 250px;
-            height: 100vh;
-            position: fixed;
-            border-right: 2px solid #151c25;
-            top: 0;
-            left: 0;
-            background: #09101a;
-            z-index: 999;
-            scrollbar-width: none;
-            transition: all linear 0.3s;
-            -webkit-transition: all linear 0.3s;
-            display: flex;
-            flex-direction: column;
-        }
-        .menu_icon{
-            position: absolute;
-            width: 50px;
-            height: 50px;
-            align-items: center;
-            justify-content: center;
-            background: green;
-            top: 10px;
-            right: -60px;
-            cursor: pointer;
-            color: #02050a;
-            font-size: 24px;
-            display: none;
-        }
-        .main_menu .logo {
-            background: #151c25;
-            padding: 50px;
-        }
-        a{
-            display: inline-block;
-            text-decoration: none;
-            color: #fff;
-        }
-        .w-100 {
-            width: 100% !important;
-        }
-        .img-fluid {
-            max-width: 100%;
-            height: auto;
-        }
-        img, svg {
-            vertical-align: middle;
-        }
-        .main_menu ul {
-            list-style: none;
-            padding: 30px 30px 60px 30px;
-            overflow: hidden;
-            flex-grow: 1;
-            overflow-y: auto;
-            transition: all linear 0.3s;
-            /* Hide scrollbar for Chrome, Safari, and Opera */
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* Internet Explorer 10+ */
-        }
-        .main_menu ul::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Opera */
-        }
-        ul, ol, li {
-            margin: 0;
-            padding: 0;
-            color: #a2a2a2;
-        }
-        .main_menu ul li a {
-            border-radius: 5px !important;
-            border: 1px solid rgba(255, 255, 255, 0.1) !important;
-            display: block;
-            margin-top: 30px;
-            font-weight: 500;
-            font-size: 14px;
-            line-height: 12px;
-            text-transform: uppercase;
-            color: #a2a2a2;
-            letter-spacing: 1px;
-            padding: 0;
-            background: none !important;
-            padding-right: 17px;
-        }
-        .main_menu ul li a span {
-            background: #222831;
-            display: inline-block;
-            width: 60px;
-            height: 60px;
-            padding: 15px;
-            line-height: 25px;
-            text-align: center;
-            border-radius: 5px;
-            margin-right: 17px;
-            font-size: 24px;
-            transition: all linear 0.3s;
-            -webkit-transition: all linear 0.3s;
-        }
-        .main_menu ul li a:hover, 
-        .main_menu ul li a.active {
-            color: green!important;
-        }
-        .main_menu ul li a span svg {
-            filter: brightness(10);
-        }
-        .main_menu ul li a:hover span, 
-        .main_menu ul li a.active span {
-            background: green;
-        }
-        .main_menu ul li a:hover svg, 
-        .main_menu ul li a.active svg {
-            filter: unset;
-        }
-
-        @media screen and (max-width: 1199.99px) {
-            .menu_icon {
-                display: flex;
-            }
-            .main_menu {
-                left: -250px;
-            }
-            .main_menu.show_menu {
-                left: 0;
-            }
-        }
-        
-        .menu_icon .close_icon {
-            display: none;
-        }
-        .menu_icon.show_icon .fa-bars.fa-xmark {
-            background: #151c25;
-            color: #fff;
-        }
-        .menu_icon.show_icon {
-            background: #151c25;
-            color: #fff;
-        }
-    </style>
-        <!-- X====== HEADER ======X -->
-
-
-
-
-        <!-- ======= BANNER ======= -->
-        <style>
-        ul, ol, li {
-            margin: 0;
-            padding: 0;
-            color: #a2a2a2;
-        }
-        .main {
-            padding-left: 250px;
-        }
-        #banner {
-            height: 100vh;
-            background-position: center center !important;
-            background-repeat: no-repeat !important;
-            background-size: cover !important;
-            position: relative;
-        }
-       
-        #banner{
-            padding-left: 20px;
-        }
-        .col-lg-7{
-            padding: 0 12;
-        }
-        .tf_banner_text {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            height: 100vh;
-        }
-        .tf_banner_text h1{
-            color: #FFF;
-            margin-bottom: 30px;
-        }
-        .tf_banner_text h1, .tf_banner_text h1 span {
-            font-size: 60px;
-            font-weight: 700;
-            text-transform: uppercase;
-            line-height: 1.2;
-            word-break: normal;
-        }
-        .tf_banner_text h1 span {
-            color: green;
-        }
-
-        .cd-headline.rotate-1 {
-            display: inline-block;
-            perspective: 1000px;
-        }
-
-        .cd-words-wrapper {
-            display: inline-block;
-            position: relative;
-            height: 1em;
-        }
-        
-        .cd-words-wrapper {
-            display: inline-block;
-            text-align: left;
-        }
-        .cd-title, .cd-words-wrapper, .cd-words-wrapper b.is-visible {
-            position: relative;
-        }
-
-        .cd-words-wrapper b {
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            transform-origin: bottom;
-            transform: rotateX(-90deg);
-            animation: flipWords 9s infinite;
-        }
-
-        .cd-words-wrapper b:nth-child(1) {
-            animation-delay: 0s;
-        }
-        .cd-words-wrapper b:nth-child(2) {
-            animation-delay: 3s;
-        }
-        .cd-words-wrapper b:nth-child(3) {
-            animation-delay: 6s;
-        }
-
-        @keyframes flipWords {
-            0% {
-                opacity: 0;
-                transform: rotateX(90deg);
-            }
-            10% {
-                opacity: 1;
-                transform: rotateX(0deg);
-            }
-            30% {
-                opacity: 1;
-                transform: rotateX(0deg);
-            }
-            40% {
-                opacity: 0;
-                transform: rotateX(90deg);
-            }
-            100% {
-                opacity: 0;
-                transform: rotateX(-180deg);
-            }
-        }
-        
-        .tf_banner_text p {
-            font-weight: 500;
-            margin-bottom: 65px;
-            word-break: normal;
-        }
-        p, span {
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 1.7;
-            color: #a2a2a2;
-        }
-
-        .tf_banner_text ul {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            margin-bottom: 28px;
-            list-style: none;
-        }
-        .tf_banner_text ul li a {
-            margin-right: 30px;
-        }
-        .common_btn, button.wp-block-search_button.wp-element-button, .post-password-form input[type="submit"], .comment-form input[type="submit"] {
-            display: inline-flex;
-            padding: 20px 40px;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            background: green;
-            color: #02050a;
-            font-weight: 500;
-            transition: all 0.3s linear 0s;
-            word-break: normal;
-        }
-
-        .banner_video_btn {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            text-transform: capitalize;
-            transition: all linear 0.3s;
-        }
-        .banner_video_btn i {
-            color: green;
-            font-size: 20px;
-            transition: all linear 0.3s;
-            font-size: 50px;
-        }
-
-
-        @media screen and (max-width: 1199.99px){
-            .main {
-                padding-left: 0;
-            }
-            section{
-                margin-left: 0;
-                padding-left: 10px;
-            }
-        }
-        @media screen and (max-width: 1024px) {
-            .main #banner{
-                height: auto !important;
-                padding: 100px 0px 70px 0px;
-            }
-            .tf_banner_text{
-                height: auto;
-            }
-            .tf_banner_text h1, .tf_banner_text h1 span{
-                font-size: 50px;
-            }
-        }
-
-        @media (max-width: 575.99px) {
-            .tf_banner_text h1, .tf_banner_text span {
-                font-size: 48px !important;
-            }
-            .tf_banner_text ul {
-                margin-left: 10px;
-            }
-            .tf_banner_text ul li a {
-                margin-bottom: 30px;
-            }
-            .main #banner{
-                height: auto !important;
-                padding: 100px 0px 50px 0px;
-            }
-        }
-    </style>
-        <!-- X====== BANNER ======X -->
-
-
-
-
-
-    <!-- ======= ABOUT ======= -->
-        <style>
-            h1, h2, h3, h4, h5, h6 {
-                padding: 0;
-                color: #fff;
-            }
-            h1, h2, h3, h4, h5, h6, p {
-                margin-bottom: 10px;
-            }
-            ul, ol, li {
-                margin: 0;
-                padding: 0;
-                color: #a2a2a2;
-            }
-            .pt_130 {
-                padding-top: 130px !important;
-            }
-            #about{
-                padding: 0 20px 0 20px;
-            }
-            .mb_40 {
-                margin-bottom: 40px !important;
-            }
-
-            .tf_section_heading h5 {
-                font-size: 20px;
-                font-weight: 500;
-                letter-spacing: 1.4px;
-                text-transform: uppercase;
-                margin-bottom: 15px;
-                color: green;
-                line-height: 1.2;
-            }
-
-            .tf_section_heading h2 {
-                font-size: 50px;
-                font-weight: 700;
-                line-height: 1.3;
-                color: #fff;
-            }
-            .justify-content-between {
-                justify-content: space-between !important;
-            }
-            .tf_about_text ul {
-                list-style: none;
-            }
-            .tf_about_text ul li {
-                margin-top: 80px;
-            }
-            .tf_about_text ul li .top {
-                display: flex;
-                flex-wrap: wrap;
-                align-items: center;
-                translate: none;
-                rotate: none;
-                scale: none;
-                transform: translate(0px, 30px);
-                opacity: 0;
-            }
-            .tf_about_text ul li .top .img {
-                width: 120px;
-                height: 120px;
-                margin-right: 30px;
-                position: relative;
-            }
-            .w-100 {
-                width: 100% !important;
-            }
-            .tf_about_text ul li .top h3 {
-                font-size: 30px;
-                font-weight: 600;
-                margin-top: 20px;
-            }
-            .tf_about_text ul li p {
-                font-weight: 500;
-                line-height: 28px;
-                margin-top: 15px;
-                font-size: 16px;
-            }
-            .tf_about_img {
-                width: 570px;
-                height: 640px;
-                width: 100%;
-                height: auto;
-                margin-left: auto;
-                margin-right: 0;
-                margin-top: 90px;
-                margin-right: 20px;
-                margin-bottom: 50px;
-                position: relative;
-                z-index: 1;
-            }
-            
-            .tf_about_img_bg_element::before {
-                position: absolute;
-                content: "";
-                background: url(https://codeefly.net/wp/zyan/wp-content/themes/zyan/assets/img/shapes/about_shapes.png);
-                background-position: center;
-                background-repeat: no-repeat;
-                background-size: cover;
-                width: 250px;
-                height: 250px;
-                top: -40px;
-                right: -50px;
-                z-index: -1;
-                animation: aboutZoom 4s ease-in-out infinite;
-                -webkit-animation: aboutZoom 4s ease-in-out infinite;
-            }
-            .about-img {
-                height: auto;
-                max-width: 100%;
-                border: none;
-                border-radius: 0;
-                box-shadow: none;
-            }
-            .tf_about_img img {
-                border-radius: 6px !important;
-            }
-            .tf_about_img .tf_about_img_text {
-                background: green;
-                left: auto;
-                right: auto;
-                transform: translate(0);
-                margin-left: auto;
-                float: right;
-                border-radius: 4px;
-                padding: 30px;
-                top: -90px;
-            }
-            .tf_about_img_text {
-                background: #232323;
-                padding: 15px 30px;
-                display: inline-flex;
-                flex-wrap: wrap;
-                align-items: center;
-                justify-content: center;
-                position: relative;
-                /* top: -45px; */
-                /* left: 50%; */
-                /* transform: translateX(-50%); */
-            }
-            .tf_about_img .tf_about_img_text i {
-                background: #fff;
-                border-radius: 4px;
-                color: green;
-            }
-            .tf_about_img_text i {
-                width: 65px;
-                height: 65px;
-                text-align: center;
-                line-height: 65px;
-                background: #fff1;
-                border-radius: 50%;
-                font-size: 40px;
-                margin-right: 10px;
-            }
-            .fa, .fas {
-                font-family: "Font Awesome 5 Free";
-                font-weight: 900;
-            }
-            .fa, .fab, .fad, .fal, .far, .fas {
-                -moz-osx-font-smoothing: grayscale;
-                -webkit-font-smoothing: antialiased;
-                display: inline-block;
-                font-style: normal;
-                font-variant: normal;
-                text-rendering: auto;
-                line-height: 1;
-            }
-            .fa-award:before {
-                content: "\f559";
-            }
-            .tf_about_img .tf_about_img_text h4 {
-                color: #02050a;
-                font-size: 40px;
-                font-weight: 700;
-                line-height: 1;
-            }
-            .tf_about_img_text h4 {
-                font-size: 16px;
-                font-weight: 600;
-            }
-            .tf_about_img .tf_about_img_text h4 span {
-                color: #02050a;
-                font-size: 20px;
-                font-weight: 600;
-            }
-            .tf_about_img_text h4 span {
-                display: block;
-                /* color: var(--colorWhite);
-                font-weight: 500; */
-                margin-top: 5px;
-            }
-            @media screen and (max-width: 1700px) {
-                #about .col-xl-6 {
-                    overflow: hidden;
-                    padding-right: 30px;
-                }
-            }
-            @media screen and (max-width: 1399.99px) {
-                .tf_section_heading h2 {
-                    font-size: 38px;
-                    line-height: 60px;
-                }
-            }
-            @media (min-width: 1200px) {
-                .h2, h2 {
-                    font-size: 2rem;
-                }
-            }
-            @media (min-width: 1200px) {
-                .col-xl-6 {
-                    flex: 0 0 auto;
-                    width: 50%;
-                }
-            }
-            
-            @media (max-width: 575.99px) {
-                .tf_about_img::before {
-                    width: 150px;
-                    height: 150px;
-                }
-            }
-            @media (max-width: 575.99px) {
-                .tf_about_img {
-                    width: auto!important;
-                    height: auto!important;
-                    margin-top: 80px!important;
-                    margin-right: 20px!important;
-                    margin-bottom: 0;
-                }
-                #about .col-xl-6 {
-                    overflow: hidden;
-                }
-                #about{
-                    padding: 0;
-                    margin: 0;
-                }
-                .tf_about_img .tf_about_img_text {
-                    padding: 15px;
-                    /* top: 0; */
-                    left: 0!important;
-                }
-                .tf_about_img .tf_about_img_text h4 {
-                    font-size: 30px;
-                    font-weight: bold;
-                }
-                .tf_about_img .tf_about_img_text h4 span {
-                    font-size: 16px;
-                    font-weight: bold;
-                }
-            }
-
-            @media (min-width: 576px) and (max-width: 767.99px) {
-                .tf_about_img {
-                    width: 400px;
-                    height: auto;
-                    margin-top: 80px;
-                    margin-right: 20px;
-                    margin-bottom: 0;
-                }
-                .tf_about_img::before {
-                    width: 150px;
-                    height: 150px;
-                }
-                #about .col-xl-6 {
-                    overflow: visible;
-                }
-            }
-            @media (min-width: 768px) and (max-width: 991.99px) {
-                .tf_about_img {
-                    width: 400px;
-                    height: auto;
-                    margin-top: 80px;
-                    margin-right: 20px;
-                    margin-bottom: 0;
-                }
-            }
-            @media (min-width: 992px) {
-                #about .col-lg-6 {
-                    flex: 0 0 auto;
-                    width: 50%;
-                }
-            }
-
-            @keyframes aboutZoom {
-                0% {
-                    transform: scale(1);
-                }
-                50% {
-                    transform: scale(1.1);
-                }
-                100% {
-                    transform: scale(1);
-                }
-            }
-        </style>
-    <!-- X====== ABOUT ======X -->
-
-
-
-    <!-- ======= SERVICE ======= -->
-        <style>
-            section#service{
-                padding: 0 20px;
-            }
-            .tf_section_heading h5 {
-                font-size: 20px;
-                font-weight: 500;
-                letter-spacing: 1.4px;
-                text-transform: uppercase;
-                text-align: center;
-                margin-bottom: 15px;
-                color: green;
-                display: block;
-                text-align: center;
-                position: relative;
-            }
-            .tf_section_heading h2 {
-                text-align: center;
-                font-size: 50px;
-                font-weight: 600;
-                line-height: 1.3;
-            }
-            .tf_single_service {
-                position: relative;
-                translate: none;
-                rotate: none;
-                scale: none;
-                transform: translate(0px, 0px);
-                opacity: 1;
-            }
-            .tf_single_service .text {
-                margin-top: 165px;
-                background: #09101a;
-                padding: 40px;
-                border-radius: 5px;
-                position: relative;
-                transition: all linear 0.3s;
-                -webkit-transition: all linear 0.3s;
-            }
-            .tf_single_service .text span {
-                display: block;
-                width: 100px;
-                height: 100px;
-                background: green;
-                padding: 12px;
-                border-radius: 5px;
-                position: absolute;
-                top: -50px;
-                left: 40px;
-            }
-            p, span {
-                font-size: 16px;
-                font-weight: 400;
-                line-height: 1.7;
-                margin: 0;
-                color: #a2a2a2;
-            }
-            .tf_single_service .text h3 {
-                font-size: 20px;
-                font-weight: 500;
-                margin-top: 40px;
-                margin-bottom: 20px;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-            }
-            .tf_single_service a {
-                border: 1px solid green;
-                padding: 15px 30px;
-                border-radius: 5px;
-                transition: all linear 0.3s;
-                position: absolute;
-                left: 50%;
-                bottom: 0;
-                transform: translateX(-50%);
-                z-index: -1;
-            }
-
-            .tf_single_service.active .text {
-                margin-top: 65px;
-            }
-            .tf_single_service.active a {
-                bottom: -100px;
-                z-index: 1;
-            }
-            .tf_single_service a:hover {
-                color: #02050a;
-                background-color: green;
-            }
-            
-
-            @media only screen and (max-width: 767px) {
-                .xs_pt_80 {
-                    padding-top: 80px !important;
-                }
-            }
-            @media (max-width: 575.99px) {
-                .tf_section_heading h2 {
-                    font-size: 36px;
-                    line-height: 45px;
-                }
-            }
-        </style>
-    <!-- X====== SERVICE ======X -->
-
-
-
-
-    <!-- ======= SKILLS ======= -->
-        <style>
-            .tf__skills_2 {
-                background: #09101a;
-            }
-            .pb_120 {
-                padding-bottom: 120px !important;
-            }
-            .pt_115 {
-                padding-top: 115px !important;
-            }
-            .mt_165 {
-                margin-top: 165px !important;
-            }
-            .mb_30 {
-                margin-bottom: 30px !important;
-            }
-            .tf__section_heading h5 {
-                font-size: 20px;
-                font-weight: 500;
-                letter-spacing: 1.4px;
-                text-transform: uppercase;
-                text-align: center;
-                margin-bottom: 15px;
-                color: GREEN;
-            }
-            .tf__section_heading h2 {
-                text-align: center;
-                font-size: 50px;
-                font-weight: 600;
-                line-height: 1.3;
-            }
-            .m-auto {
-                margin: auto !important;
-            }
-            .tf__skills_2 .nav {
-                justify-content: center;
-            }
-            .mb_30 {
-                margin-bottom: 30px !important;
-            }
-            .nav-pills {
-                --bs-nav-pills-border-radius: 0.375rem;
-                --bs-nav-pills-link-active-color: #fff;
-                --bs-nav-pills-link-active-bg: #0d6efd;
-            }
-            .nav {
-                --bs-nav-link-padding-x: 1rem;
-                --bs-nav-link-padding-y: 0.5rem;
-                --bs-nav-link-font-weight: ;
-                --bs-nav-link-color: var(--bs-link-color);
-                --bs-nav-link-hover-color: var(--bs-link-hover-color);
-                --bs-nav-link-disabled-color: var(--bs-secondary-color);
-                display: flex;
-                flex-wrap: wrap;
-                padding-left: 0;
-                list-style: none;
-            }
-
-            ul, ol, li {
-                list-style: none;
-                margin: 0;
-                padding: 0;
-                color: #ffffff;
-            }
-            .tf__skills_2 .nav .nav-item button:hover, .tf__skills_2 .nav .nav-item button.active {
-                background: green;
-                color: #02050a;
-            }
-            .tf__skills_2 .nav .nav-item button {
-                text-transform: capitalize;
-                color: #ffffff;
-                margin: 5px 10px;
-                font-weight: 500;
-                border-radius: 5px;
-                background: #141c27;
-                font-size: 16px;
-                padding: 18px 40px;
-                transition: all linear 0.3s;
-                -webkit-transition: all linear 0.3s;
-            }
-            .tf__skills_2 .nav .nav-item button i {
-                margin-left: 10px;
-            }
-
-            .nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-                color: var(--bs-nav-pills-link-active-color);
-                background-color: var(--bs-nav-pills-link-active-bg);
-            }
-
-            .col-12 {
-                flex: 0 0 auto;
-                width: 100%;
-            }
-            .tab-content>.active {
-                display: block;
-            }
-            /* .tab-content>.tab-pane {
-                display: none;
-            } */
-
-            .fade {
-                transition: opacity .15s linear;
-            }
-            .tf__single_skill_2 {
-                border: 1px solid #e3e3e310;
-                border-radius: 5px;
-                padding: 40px 40px 40px 70px;
-                margin-top: 25px;
-            }
-            .tf__single_skill_2 {
-                translate: none;
-                rotate: none;
-                scale: none;
-                transform: translate(0px, 30px);
-                opacity: 1;
-            }
-            .tf__single_skill_2 h3 {
-                font-size: 16px;
-                font-weight: 500;
-                border-bottom: 1px solid green;
-                display: inline-block;
-                padding-right: 30px;
-                padding-bottom: 12px;
-                position: relative;
-                margin-bottom: 20px;
-            }
-            .tf__single_skill_2 h3::after {
-                position: absolute;
-                content: "\f101";
-                font-family: "Font Awesome 6 Free";
-                font-weight: 600;
-                font-size: 14px;
-                color: green;
-                top: 2px;
-                left: -30px;
-            }
-            .tf__single_skill_2 h2 {
-                font-size: 20px;
-                font-weight: 600;
-                margin-bottom: 10px;
-            }
-            .tf__single_skill_2 h4 {
-                font-size: 16px;
-                font-weight: 500;
-                margin-bottom: 25px;
-            }
-            .tf__single_skill_2 p {
-                font-size: 16px;
-                font-weight: 500;
-                line-height: 28px;
-                margin-bottom: 25px;
-            }
-            .tf__single_skill_2 .tf__team_skills_bar_single {
-                margin: 0;
-                background: none;
-            }
-            .tf__single_skill_2 .tf__team_skills_bar_single p {
-                padding: 0;
-                margin-bottom: 20px;
-            }
-            .tf__single_skill_2 p {
-                font-size: 16px;
-                font-weight: 500;
-                line-height: 28px;
-                margin-bottom: 25px;
-            }
-            .tf__team_skills_bar_single p {
-                padding-left: 40px;
-                padding-top: 15px;
-                padding-bottom: 15px;
-                color: #ffffff;
-            }
-            .tf__single_skill_2 .tf__team_skills_bar_single .barfiller {
-                background: #141c27;
-            }
-            .barfiller {
-                width: 100%;
-                height: 6px;
-                background: 0 0;
-                border: none;
-            }
-            .barfiller, .barfiller .fill, .slick-list, .slick-slider, .slick-track {
-                position: relative;
-            }
-            .barfiller .tipWrap, .mfp-align-top .mfp-container:before, .mfp-loading.mfp-figure, .mfp-s-error .mfp-content, .mfp-s-ready .mfp-preloader, .slick-arrow.slick-hidden, .slick-slide.slick-loading img {
-                display: none;
-            }
-            .tf__single_skill_2 .barfiller .tip {
-                margin-top: -43px;
-                font-size: 13px;
-            }
-            .barfiller .tip {
-                margin-top: -33px;
-                position: absolute;
-                z-index: 2;
-                font-size: 14px;
-                font-weight: 400;
-                color: #ffffff;
-            }
-            .barfiller .fill {
-                width: 80%;
-                background: green;
-                transition: opacity .15s linear;
-            }
-            .barfiller .fill {
-                display: block;
-                width: 0;
-                height: 100%;
-                background: green;
-                z-index: 1;
-            }
-            .barfiller .fill {
-                display: block;
-                width: 0;
-                height: 100%;
-                background: green;
-                z-index: 1;
-                transition: width 5s ease-in-out;
-            }
-
-
-            .barfiller .fill {
-                display: block;
-                width: 0;
-                height: 100%;
-                background: green;
-                z-index: 1;
-                transition: width 1.5s ease-in-out;
-                position: relative;
-            }
-            .barfiller .tip {
-                position: absolute;
-                right: 0;
-                top: -25px;
-                font-size: 14px;
-                color: #fff;
-                font-weight: bold;
-            }
-
-
-            .tab-content>.active {
-                display: block;
-            }
-            .fade {
-                transition: opacity .15s linear;
-            }
-
-
-            section#skills{
-                padding: 0 20px;
-            }
-
-            @media (min-width: 992px) and (max-width: 1199.99px) {
-                .tf__section_heading h2 {
-                    font-size: 38px;
-                    line-height: 60px;
-                }
-            }
-
-            @media (min-width: 992px) {
-                .col-lg-6 {
-                    flex: 0 0 auto;
-                    width: 50%;
-                }
-            }
-            @media (min-width: 1200px) {
-                .col-xl-6 {
-                    flex: 0 0 auto;
-                    width: 50%;
-                }
-            }
-            @media (min-width: 1200px) {
-                .h3, h3 {
-                    font-size: 1.75rem;
-                }
-                .h2, h2 {
-                    font-size: 2rem;
-                }
-            }
-            @media (min-width: 1400px) {
-                .col-xxl-8 {
-                    flex: 0 0 auto;
-                    width: 66.66666667%;
-                }
-            }
-            @media (min-width: 1200px) {
-                .col-xl-10 {
-                    flex: 0 0 auto;
-                    width: 83.33333333%;
-                }
-            }
-            @media (min-width: 1200px) and (max-width: 1399.99px) {
-                .tf__section_heading h2 {
-                    font-size: 38px;
-                    line-height: 60px;
-                }
-            }
-            @media (min-width: 1200px) {
-                .col-xl-9 {
-                    flex: 0 0 auto;
-                    width: 75%;
-                }
-            }
-            @media (min-width: 576px) and (max-width: 767.99px) {
-                .tf__section_heading h2 {
-                    font-size: 36px;
-                    line-height: 45px;
-                }
-            }
-            @media (min-width: 576px) and (max-width: 767.99px) {
-                .tf__skills_2 .nav .nav-item button {
-                    padding: 10px 20px;
-                    font-size: 13px;
-                    margin: 5px 5px;
-                }
-                .tf__single_skill_2 {
-                    padding: 20px 20px 20px 50px;
-                }
-            }
-            @media (max-width: 575.99px) {
-                .tf__section_heading h2 {
-                    font-size: 36px;
-                    line-height: 45px;
-                }
-                .tf__single_skill_2 {
-                    padding: 20px 20px 20px 50px;
-                }
-            }
-            @media (max-width: 575.99px) {
-                .tf__skills_2 .nav .nav-item button {
-                    padding: 10px 20px;
-                    font-size: 13px;
-                }
-            }
-           
-        </style>
-    <!-- X====== SKILLS ======X -->
-
-
-
-
-    <!-- ======= PORTFOLIO ======= -->
-     <style>
-        section#portfolio{
-            padding: 0 20px;
-        }
-        .tf__portfolio_2 .tf__portfolio_item {
-            height: auto;
-        }
-        .tf__portfolio_item {
-            height: 550px;
-            margin-top: 25px;
-            overflow: hidden;
-            position: relative;
-            display: block;
-            width: 100%;
-        }
-        .tf__portfolio_2 .tf__portfolio_item img {
-            border-radius: 6px;
-            -webkit-border-radius: 6px;
-            -moz-border-radius: 6px;
-            -ms-border-radius: 6px;
-            -o-border-radius: 6px;
-        }
-
-        .w-100 {
-            width: 100% !important;
-        }
-        .mt_120 {
-            margin-top: 120px !important;
-        }
-        .img-fluid {
-            max-width: 100%;
-            height: auto;
-        }
-        #about h5,
-        #about h2,
-        #portfolio h5,
-        #portfolio h2{
-            text-align: left!important;
-        }
-
-        img {
-            width: 100% !important;
-            height: 100% !important;
-            object-fit: cover !important;
-        }
-        .tf__portfolio_item .text {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            padding: 30px;
-            background: rgb(2, 5, 10);
-            background: linear-gradient(0deg, rgba(2, 5, 10, 1) 0%, rgba(2, 5, 10, 0.5802696078431373) 61%, rgba(2, 5, 10, 0) 100%);
-            transform: scaleY(0);
-            transform-origin: bottom;
-            transition: all linear 0.3s;
-            -webkit-transition: all linear 0.3s;
-            -webkit-transform: scaleY(0);
-        }
-        .tf__portfolio_item:hover .text {
-            transform: scale(1);
-            -webkit-transform: scale(1);
-        }
-        .tf__portfolio_item .text h4 {
-            text-transform: capitalize;
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-        .tf__portfolio_item .text p {
-            position: relative;
-            text-transform: capitalize;
-            padding-left: 60px;
-        }
-        .tf__portfolio_item .text p::after {
-            position: absolute;
-            content: "";
-            background: green;
-            width: 50px;
-            height: 1px;
-            top: 12px;
-            left: 0;
-        }
-        .tf__portfolio_2 .tf__portfolio_item {
-            height: auto;
-        }
-        .tf__portfolio_item {
-            height: 550px;
-            margin-top: 25px;
-            overflow: hidden;
-            position: relative;
-            display: block;
-            width: 100%;
-        }
-        .tf__portfolio_2 .tf__portfolio_item img {
-            border-radius: 6px;
-            -webkit-border-radius: 6px;
-        }
-        .mfp-hide {
-            display: none !important;
-        }
-        img {
-            width: 100% !important;
-            height: 100% !important;
-            object-fit: cover !important;
-        }
-        .des {
-            padding: 30px 40px;
-        }
-        .des .category {
-            text-transform: uppercase;
-            color: green;
-            letter-spacing: 1px;
-            margin: 5px 0;
-            display: block;
-            font-size: 14px;
-        }
-        .des .popup_title {
-            margin-bottom: 20px;
-        }
-        .des .details_quot_text {
-            margin: 20px 0 !important;
-            padding: 20px 30px;
-        }
-        .details_quot_text {
-            background: var(--bgColor);
-            padding: 50px;
-            margin-top: 57px;
-            margin-bottom: 35px;
-            position: relative;
-        }
-        .details_quot_text p {
-            margin: 0;
-        }
-        .details_quot_text h4 {
-            font-size: 16px;
-            font-weight: 600;
-            margin-top: 25px;
-        }
-     </style>
-    <!-- X====== PORTFOLIO ======X -->
-    
-    
-    <!-- ======= PORTFOLIO ======= -->
-     <style>
-        .tf__brand {
-            background: green;
-        }
-        .mt_120 {
-            margin-top: 120px !important;
-        }
-        .js-marquee{
-            display: flex;
-            width: max-content;
-            animation: scroll-marquee 20s linear infinite;
-        }
-        .tf__brand ul {
-            display: flex;
-            padding: 25px 0px 30px 0px;
-            margin: 0;
-            list-style: none;
-        }
-        .tf__brand ul li {
-            -webkit-text-stroke: 1px #02050a;
-            -webkit-text-fill-color: transparent;
-            font-size: 110px;
-            font-weight: 700;
-            text-transform: uppercase;
-            padding-left: 40px;
-            white-space: nowrap;
-        }
-        /* Keyframes for continuous right-to-left scroll */
-        @keyframes scroll-marquee {
-            0% {
-              transform: translateX(0%);
-            }
-            100% {
-              transform: translateX(-50%);
-            }
-        }
-     </style>
-     
-    <!-- X====== PORTFOLIO ======X -->
+        <link href="https://cdn.lineicons.com/5.0/lineicons.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
     </head>
-    <body>
+    <body class="home_2">
+        <!--=======================================================================
+        ///////////////////////////// PRELOADER START /////////////////////////////
+        ========================================================================-->
+        <div class="preloader">
+            <!-- Pixel grid elements -->
+            <div class="pixel-grid">
+                <div class="pixel-row" id="top-row"></div>
+                <div class="pixel-row" id="bottom-row"></div>
+                <div class="pixel-column" id="left-column"></div>
+                <div class="pixel-column" id="right-column"></div>
+            </div>
+
+            <!-- Massive counter -->
+            <div class="counter-wrapper">
+                <div class="counter" id="counter">0</div>
+                <div class="counter-outline" aria-hidden="true"></div>
+            </div>
+
+            <!-- Status text -->
+            <div class="text-container">
+                <div class="loading-text">LOADING SYSTEM</div>
+                <div class="system-messages">
+                    <div class="message">INITIALIZING</div>
+                    <div class="message">DATA_TRANSFER</div>
+                    <div class="message">COMPILING</div>
+                    <div class="message">FINALIZING</div>
+                    <div class="message">COMPLETE</div>
+                </div>
+            </div>
+
+            <!-- Progress markers -->
+            <div class="loading-bar-container">
+                <div class="loading-bar">
+                    <div class="progress"></div>
+                </div>
+                <div class="loading-bar-markers">
+                    <div class="marker" data-position="0">00</div>
+                    <div class="marker" data-position="25">25</div>
+                    <div class="marker" data-position="50">50</div>
+                    <div class="marker" data-position="75">75</div>
+                    <div class="marker" data-position="100">100</div>
+                </div>
+                <!-- Progressive line fills -->
+                <div class="connector-lines">
+                    <div class="connector-line" id="line-0-25"></div>
+                    <div class="connector-line" id="line-25-50"></div>
+                    <div class="connector-line" id="line-50-75"></div>
+                    <div class="connector-line" id="line-75-100"></div>
+                </div>
+            </div>
+
+            <!-- Block elements that progressively fill -->
+            <div class="block-container">
+                <div class="block" id="block-1"></div>
+                <div class="block" id="block-2"></div>
+                <div class="block" id="block-3"></div>
+                <div class="block" id="block-4"></div>
+            </div>
+        </div>
+        <!--=======================================================================
+        ////////////////////////////// PRELOADER END //////////////////////////////
+        ========================================================================-->
+
+
         <div class="main_body">
+            <!--=======================================================================
+            ////////////////////////////// HEADER START ///////////////////////////////
+            ========================================================================-->
             <nav id="menu-bar" class="main_menu">
                 <span id="menu_icon" class="menu_icon">
                     <i id="menu_btn" class="fa-solid fa-bars open_icon"></i>
@@ -1327,7 +90,8 @@
                         itemtype="https://www.schema.org/SiteNavigationElement"
                         id="menu-item-328"
                         class="menu-item menu-item-type-custom menu-item-object-custom nav-item menu-item-328 nav-item">
-                        <a title="Home" href="#banner" class="nav-link text_hover_animaiton active">
+                        <a title="Home" href="#banner"
+                            class="nav-link text_hover_animaiton active">
                             <span>
                                 <svg width="24" height="24" viewBox="0 0 24 24"
                                     fill="none"
@@ -1554,9 +318,14 @@
                     </li>
                 </ul>
             </nav>
+            <!--=======================================================================
+            /////////////////////////////// HEADER END ////////////////////////////////
+            ========================================================================-->
             <div class="main">
-                <section id="banner"
-                    style="background: url(banner.png);">
+                <!--=======================================================================
+                ////////////////////////////// BANNER START ///////////////////////////////
+                ========================================================================-->
+                <section id="banner" style="background: url(banner.png);">
                     <div class="container">
                         <div class="row justify-content-between">
                             <div class="col-xxl-6 col-md-9 col-lg-7">
@@ -1606,6 +375,14 @@
                         </div>
                     </div>
                 </section>
+                <!--=======================================================================
+                /////////////////////////////// BANNER END ////////////////////////////////
+                ========================================================================-->
+
+
+                <!--=======================================================================
+                /////////////////////////////// ABOUT START ///////////////////////////////
+                ========================================================================-->
                 <section id="about" class="tf_about pt_130 xs_pt_80">
                     <div class="container">
                         <div class="row">
@@ -1699,32 +476,74 @@
                         </div>
                     </div>
                 </section>
-                <section id="service" class="tf_service pt_130 xs_pt_80 animation">
+                <!--=======================================================================
+                //////////////////////////////// ABOUT END ////////////////////////////////
+                ========================================================================-->
+
+
+                <!--=======================================================================
+                ////////////////////////////// SERVICE START //////////////////////////////
+                ========================================================================-->
+                <section id="service"
+                    class="tf_service pt_130 xs_pt_80 animation">
                     <div class="container">
                         <div class="row">
                             <div class="col-xl-9 col-lg-9 m-auto">
                                 <div class="tf_section_heading mb_40">
-                                    <h5 class="has-animation" style>MY serivce</h5>
-                                    <h2 class="has-animation" style>Bringing your vision to life with precision and passion</h2>
+                                    <h5 class="has-animation" style>MY
+                                        serivce</h5>
+                                    <h2 class="has-animation" style>Bringing
+                                        your vision to life with precision and
+                                        passion</h2>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-xl-4 col-md-6 col-lg-4">
-                                <div class="tf_single_service fade_left" data-trigerid="service" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                <div class="tf_single_service fade_left"
+                                    data-trigerid="service"
+                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
                                     <div class="text">
                                         <span>
-                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="null" class="img-fluid w-100 svg replaced-svg">
-                                                <path d="M8.92993 2L8.95993 3.53003C8.97993 4.34003 9.64993 5 10.4599 5H13.4799C14.3099 5 14.9799 4.32 14.9799 3.5V2" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                <path d="M17 17L15 19L17 21" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                <path d="M20 17L22 19L20 21" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                <path d="M13 22H8C4.5 22 3 20 3 17V7C3 4 4.5 2 8 2H16C19.5 2 21 4 21 7V14" stroke="#292D32" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <svg width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                id="null"
+                                                class="img-fluid w-100 svg replaced-svg">
+                                                <path
+                                                    d="M8.92993 2L8.95993 3.53003C8.97993 4.34003 9.64993 5 10.4599 5H13.4799C14.3099 5 14.9799 4.32 14.9799 3.5V2"
+                                                    stroke="#292D32"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                                <path d="M17 17L15 19L17 21"
+                                                    stroke="#292D32"
+                                                    stroke-width="1.5"
+                                                    stroke-miterlimit="10"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                                <path d="M20 17L22 19L20 21"
+                                                    stroke="#292D32"
+                                                    stroke-width="1.5"
+                                                    stroke-miterlimit="10"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                                <path
+                                                    d="M13 22H8C4.5 22 3 20 3 17V7C3 4 4.5 2 8 2H16C19.5 2 21 4 21 7V14"
+                                                    stroke="#292D32"
+                                                    stroke-width="1.5"
+                                                    stroke-miterlimit="10"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
                                             </svg>
                                             <i class="icon-app-development"></i>
                                         </span>
                                         <h3>Website Design</h3>
                                         <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                                            Lorem ipsum dolor sit amet,
+                                            consectetur adipiscing elit, sed do
+                                            eiusmod tempor incididunt ut labore
+                                            et dolore
                                         </p>
                                     </div>
                                     <a href="#">Read More</a>
@@ -1736,38 +555,107 @@
                                     style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
                                     <div class="text">
                                         <span>
-                                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="null" class="img-fluid w-100 svg replaced-svg">
-                                                <path d="M10.75 22.5001H13.27C14.23 22.5001 14.85 21.8201 14.67 20.9901L14.26 19.1802H9.75999L9.35 20.9901C9.17 21.7701 9.85 22.5001 10.75 22.5001Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                <path d="M14.26 19.1702L15.99 17.6301C16.96 16.7701 17 16.1701 16.23 15.2001L13.18 11.3302C12.54 10.5202 11.49 10.5202 10.85 11.3302L7.8 15.2001C7.03 16.1701 7.02999 16.8001 8.03999 17.6301L9.77 19.1702" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                <path d="M12.01 11.1201V13.6501" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                <path d="M12.52 5H11.52C10.97 5 10.52 4.55 10.52 4V3C10.52 2.45 10.97 2 11.52 2H12.52C13.07 2 13.52 2.45 13.52 3V4C13.52 4.55 13.07 5 12.52 5Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                <path d="M3.27 14.17H4.27C4.82 14.17 5.27 13.72 5.27 13.17V12.17C5.27 11.62 4.82 11.1699 4.27 11.1699H3.27C2.72 11.1699 2.27 11.62 2.27 12.17V13.17C2.27 13.72 2.72 14.17 3.27 14.17Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                <path d="M20.73 14.17H19.73C19.18 14.17 18.73 13.72 18.73 13.17V12.17C18.73 11.62 19.18 11.1699 19.73 11.1699H20.73C21.28 11.1699 21.73 11.62 21.73 12.17V13.17C21.73 13.72 21.28 14.17 20.73 14.17Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                <path d="M10.52 3.56006C6.71 4.01006 3.75 7.24004 3.75 11.17" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                <path d="M20.25 11.17C20.25 7.25004 17.31 4.03006 13.52 3.56006" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <svg width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                id="null"
+                                                class="img-fluid w-100 svg replaced-svg">
+                                                <path
+                                                    d="M10.75 22.5001H13.27C14.23 22.5001 14.85 21.8201 14.67 20.9901L14.26 19.1802H9.75999L9.35 20.9901C9.17 21.7701 9.85 22.5001 10.75 22.5001Z"
+                                                    stroke="#292D32"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                                <path
+                                                    d="M14.26 19.1702L15.99 17.6301C16.96 16.7701 17 16.1701 16.23 15.2001L13.18 11.3302C12.54 10.5202 11.49 10.5202 10.85 11.3302L7.8 15.2001C7.03 16.1701 7.02999 16.8001 8.03999 17.6301L9.77 19.1702"
+                                                    stroke="#292D32"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                                <path d="M12.01 11.1201V13.6501"
+                                                    stroke="#292D32"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                                <path
+                                                    d="M12.52 5H11.52C10.97 5 10.52 4.55 10.52 4V3C10.52 2.45 10.97 2 11.52 2H12.52C13.07 2 13.52 2.45 13.52 3V4C13.52 4.55 13.07 5 12.52 5Z"
+                                                    stroke="#292D32"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                                <path
+                                                    d="M3.27 14.17H4.27C4.82 14.17 5.27 13.72 5.27 13.17V12.17C5.27 11.62 4.82 11.1699 4.27 11.1699H3.27C2.72 11.1699 2.27 11.62 2.27 12.17V13.17C2.27 13.72 2.72 14.17 3.27 14.17Z"
+                                                    stroke="#292D32"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                                <path
+                                                    d="M20.73 14.17H19.73C19.18 14.17 18.73 13.72 18.73 13.17V12.17C18.73 11.62 19.18 11.1699 19.73 11.1699H20.73C21.28 11.1699 21.73 11.62 21.73 12.17V13.17C21.73 13.72 21.28 14.17 20.73 14.17Z"
+                                                    stroke="#292D32"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                                <path
+                                                    d="M10.52 3.56006C6.71 4.01006 3.75 7.24004 3.75 11.17"
+                                                    stroke="#292D32"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                                <path
+                                                    d="M20.25 11.17C20.25 7.25004 17.31 4.03006 13.52 3.56006"
+                                                    stroke="#292D32"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
                                             </svg>
                                         </span>
                                         <h3>Logo Design</h3>
                                         <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                                            Lorem ipsum dolor sit amet,
+                                            consectetur adipiscing elit, sed do
+                                            eiusmod tempor incididunt ut labore
+                                            et dolore
                                         </p>
                                     </div>
                                     <a href="#">Read More</a>
                                 </div>
                             </div>
                             <div class="col-xl-4 col-md-6 col-lg-4">
-                                <div class="tf_single_service fade_left" data-trigerid="service" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                <div class="tf_single_service fade_left"
+                                    data-trigerid="service"
+                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
                                     <div class="text">
                                         <span>
-                                            <svg width="24" height="24" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg" id="null" class="img-fluid w-100 svg replaced-svg">
-                                                <path d="M17 6V16C17 20 16 21 12 21H6C2 21 1 20 1 16V6C1 2 2 1 6 1H12C16 1 17 2 17 6Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                <path d="M11 4.5H7" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                                                <path d="M8.99995 18.1C9.85599 18.1 10.55 17.406 10.55 16.55C10.55 15.694 9.85599 15 8.99995 15C8.14391 15 7.44995 15.694 7.44995 16.55C7.44995 17.406 8.14391 18.1 8.99995 18.1Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                                            <svg width="24" height="24"
+                                                viewBox="0 0 18 22" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                id="null"
+                                                class="img-fluid w-100 svg replaced-svg">
+                                                <path
+                                                    d="M17 6V16C17 20 16 21 12 21H6C2 21 1 20 1 16V6C1 2 2 1 6 1H12C16 1 17 2 17 6Z"
+                                                    stroke="#292D32"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                                <path d="M11 4.5H7"
+                                                    stroke="#292D32"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
+                                                <path
+                                                    d="M8.99995 18.1C9.85599 18.1 10.55 17.406 10.55 16.55C10.55 15.694 9.85599 15 8.99995 15C8.14391 15 7.44995 15.694 7.44995 16.55C7.44995 17.406 8.14391 18.1 8.99995 18.1Z"
+                                                    stroke="#292D32"
+                                                    stroke-width="1.5"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"></path>
                                             </svg>
                                         </span>
                                         <h3>Apps Development</h3>
                                         <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                                            Lorem ipsum dolor sit amet,
+                                            consectetur adipiscing elit, sed do
+                                            eiusmod tempor incididunt ut labore
+                                            et dolore
                                         </p>
                                     </div>
                                     <a href="#">Read More</a>
@@ -1776,534 +664,1042 @@
                         </div>
                     </div>
                 </section>
-                <section id="skills" class="tf__skills_2 pt_115 xs_pt_75 pb_120 xs_pb_80 mt_165 xs_mt_80">
+                <!--=======================================================================
+                /////////////////////////////// SERVICE END ///////////////////////////////
+                ========================================================================-->
+
+
+                <!--=======================================================================
+                /////////////////////////////// SKILLS START //////////////////////////////
+                ========================================================================-->
+                <section id="skills"
+                    class="tf__skills_2 pt_115 xs_pt_75 pb_120 xs_pb_80 mt_165 xs_mt_80">
                     <div class="container">
-                      <div class="row">
-                        <div class="col-xl-9 col-lg-9 m-auto">
-                          <div class="tf__section_heading mb_30">
-                            <h5 class="has-animation" style="">MY SKILLS</h5>
-                            <h2 class="has-animation" style="">Crafting Stories through Design and Imagination</h2>
-                          </div>
+                        <div class="row">
+                            <div class="col-xl-9 col-lg-9 m-auto">
+                                <div class="tf__section_heading mb_30">
+                                    <h5 class="has-animation" style>MY
+                                        SKILLS</h5>
+                                    <h2 class="has-animation" style>Crafting
+                                        Stories through Design and
+                                        Imagination</h2>
+                                </div>
+                            </div>
                         </div>
-                      </div>
-          
-                      <div class="row">
-                        <div class="col-xxl-8 col-xl-10 m-auto">
-                          <ul class="nav nav-pills mb_30" id="pills-tab" role="tablist">
-                            <li class="nav-item" role="presentation">
-                              <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">
-                                Download Cv <i class="fa-solid fa-arrow-down-to-line"></i>
-                              </button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                              <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false" tabindex="-1">
-                                Education
-                              </button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                              <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false" tabindex="-1">
-                                Biography
-                              </button>
-                            </li>
-                            <li class="nav-item" role="presentation">
-                              <button class="nav-link" id="pills-disabled-tab" data-bs-toggle="pill" data-bs-target="#pills-disabled" type="button" role="tab" aria-controls="pills-disabled" aria-selected="false" tabindex="-1">
-                                Experience
-                              </button>
-                            </li>
-                          </ul>
+
+                        <div class="row">
+                            <div class="col-xxl-8 col-xl-10 m-auto">
+                                <ul class="nav nav-pills mb_30" id="pills-tab"
+                                    role="tablist">
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link active"
+                                            id="pills-home-tab"
+                                            data-bs-toggle="pill"
+                                            data-bs-target="#pills-home"
+                                            type="button" role="tab"
+                                            aria-controls="pills-home"
+                                            aria-selected="true">
+                                            Download Cv <i
+                                                class="fa-solid fa-arrow-down-to-line"></i>
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link"
+                                            id="pills-profile-tab"
+                                            data-bs-toggle="pill"
+                                            data-bs-target="#pills-profile"
+                                            type="button" role="tab"
+                                            aria-controls="pills-profile"
+                                            aria-selected="false" tabindex="-1">
+                                            Education
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link"
+                                            id="pills-contact-tab"
+                                            data-bs-toggle="pill"
+                                            data-bs-target="#pills-contact"
+                                            type="button" role="tab"
+                                            aria-controls="pills-contact"
+                                            aria-selected="false" tabindex="-1">
+                                            Biography
+                                        </button>
+                                    </li>
+                                    <li class="nav-item" role="presentation">
+                                        <button class="nav-link"
+                                            id="pills-disabled-tab"
+                                            data-bs-toggle="pill"
+                                            data-bs-target="#pills-disabled"
+                                            type="button" role="tab"
+                                            aria-controls="pills-disabled"
+                                            aria-selected="false" tabindex="-1">
+                                            Experience
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-12">
-                          <div class="tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
-                              <div class="row">
-                                <div class="col-xl-6 col-lg-6">
-                                  <div class="tf__single_skill_2 fade_bottom" data-trigerid="skills" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                                    <h3>Creative Agency</h3>
-                                    <h2>Framer Designer &amp; Developer</h2>
-                                    <h4>2019 - Present</h4>
-                                    <p>
-                                      Nemo enim ipsam voluptatem quia voluptas sit
-                                      aspernatur aut odit aut fugit sed thisnquia
-                                      consequuntur magni dolores eos qui ratione
-                                      voluptatem sequi nesciunt
-                                    </p>
-                                    <div class="tf__team_skills_bar_single">
-                                      <p>Performence</p>
-                                      <div id="bar1" class="barfiller">
-                                        <div class="tipWrap">
-                                          <span class="tip"></span>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="tab-content" id="pills-tabContent">
+                                    <div class="tab-pane fade show active"
+                                        id="pills-home" role="tabpanel"
+                                        aria-labelledby="pills-home-tab"
+                                        tabindex="0">
+                                        <div class="row">
+                                            <div class="col-xl-6 col-lg-6">
+                                                <div
+                                                    class="tf__single_skill_2 fade_bottom"
+                                                    data-trigerid="skills"
+                                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                                    <h3>Creative Agency</h3>
+                                                    <h2>Framer Designer &amp;
+                                                        Developer</h2>
+                                                    <h4>2019 - Present</h4>
+                                                    <p>
+                                                        Nemo enim ipsam
+                                                        voluptatem quia voluptas
+                                                        sit
+                                                        aspernatur aut odit aut
+                                                        fugit sed thisnquia
+                                                        consequuntur magni
+                                                        dolores eos qui ratione
+                                                        voluptatem sequi
+                                                        nesciunt
+                                                    </p>
+                                                    <div
+                                                        class="tf__team_skills_bar_single">
+                                                        <p>Performence</p>
+                                                        <div id="bar1"
+                                                            class="barfiller">
+                                                            <div
+                                                                class="tipWrap">
+                                                                <span
+                                                                    class="tip"></span>
+                                                            </div>
+                                                            <span class="fill"
+                                                                data-percentage="80"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6">
+                                                <div
+                                                    class="tf__single_skill_2 fade_bottom"
+                                                    data-trigerid="skills"
+                                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                                    <h3>Apple Technology</h3>
+                                                    <h2>Web Application
+                                                        Manager</h2>
+                                                    <h4>2009 - 2012</h4>
+                                                    <p>
+                                                        Nemo enim ipsam
+                                                        voluptatem quia voluptas
+                                                        sit
+                                                        aspernatur aut odit aut
+                                                        fugit sed thisnquia
+                                                        consequuntur magni
+                                                        dolores eos qui ratione
+                                                        voluptatem sequi
+                                                        nesciunt
+                                                    </p>
+                                                    <div
+                                                        class="tf__team_skills_bar_single">
+                                                        <p>Performence</p>
+                                                        <div id="bar2"
+                                                            class="barfiller">
+                                                            <div
+                                                                class="tipWrap">
+                                                                <span
+                                                                    class="tip"></span>
+                                                            </div>
+                                                            <span class="fill"
+                                                                data-percentage="90"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6">
+                                                <div
+                                                    class="tf__single_skill_2 fade_bottom"
+                                                    data-trigerid="skills"
+                                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                                    <h3>Softech Agency</h3>
+                                                    <h2>Wordpress and End
+                                                        Developer</h2>
+                                                    <h4>2014 - 2018</h4>
+                                                    <p>
+                                                        Nemo enim ipsam
+                                                        voluptatem quia voluptas
+                                                        sit
+                                                        aspernatur aut odit aut
+                                                        fugit sed thisnquia
+                                                        consequuntur magni
+                                                        dolores eos qui ratione
+                                                        voluptatem sequi
+                                                        nesciunt
+                                                    </p>
+                                                    <div
+                                                        class="tf__team_skills_bar_single">
+                                                        <p>Performence</p>
+                                                        <div id="bar3"
+                                                            class="barfiller">
+                                                            <div
+                                                                class="tipWrap">
+                                                                <span
+                                                                    class="tip"></span>
+                                                            </div>
+                                                            <span class="fill"
+                                                                data-percentage="75"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-lg-6">
+                                                <div
+                                                    class="tf__single_skill_2 fade_bottom"
+                                                    data-trigerid="skills"
+                                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                                    <h3>Kent State
+                                                        University</h3>
+                                                    <h2>Master Degree Of
+                                                        information
+                                                        Technology</h2>
+                                                    <h4>2005 - 2009</h4>
+                                                    <p>
+                                                        Nemo enim ipsam
+                                                        voluptatem quia voluptas
+                                                        sit
+                                                        aspernatur aut odit aut
+                                                        fugit sed thisnquia
+                                                        consequuntur magni
+                                                        dolores eos qui ratione
+                                                        voluptatem sequi
+                                                        nesciunt
+                                                    </p>
+                                                    <div
+                                                        class="tf__team_skills_bar_single">
+                                                        <p>Performence</p>
+                                                        <div id="bar4"
+                                                            class="barfiller">
+                                                            <div
+                                                                class="tipWrap">
+                                                                <span
+                                                                    class="tip"></span>
+                                                            </div>
+                                                            <span class="fill"
+                                                                data-percentage="70"></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <span class="fill" data-percentage="80"></span>
-                                      </div>
                                     </div>
-                                  </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6">
-                                  <div class="tf__single_skill_2 fade_bottom" data-trigerid="skills" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                                    <h3>Apple Technology</h3>
-                                    <h2>Web Application Manager</h2>
-                                    <h4>2009 - 2012</h4>
-                                    <p>
-                                      Nemo enim ipsam voluptatem quia voluptas sit
-                                      aspernatur aut odit aut fugit sed thisnquia
-                                      consequuntur magni dolores eos qui ratione
-                                      voluptatem sequi nesciunt
-                                    </p>
-                                    <div class="tf__team_skills_bar_single">
-                                      <p>Performence</p>
-                                      <div id="bar2" class="barfiller">
-                                        <div class="tipWrap">
-                                          <span class="tip"></span>
+                                    <div class="tab-pane fade"
+                                        id="pills-profile" role="tabpanel"
+                                        aria-labelledby="pills-profile-tab"
+                                        tabindex="0">
+                                        <div class="row education">
+                                            <div class="col-xl-6 col-lg-6">
+                                                <div
+                                                    class="tf__single_skill_2 fade_bottom"
+                                                    data-trigerid="skills"
+                                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                                    <h3>MBA</h3>
+                                                    <h2>University of Dhaka</h2>
+                                                    <h4>2009 - 2012</h4>
+                                                    <p>
+                                                        Nemo enim ipsam
+                                                        voluptatem quia voluptas
+                                                        sit
+                                                        aspernatur aut odit aut
+                                                        fugit sed thisnquia
+                                                        consequuntur magni
+                                                        dolores eos qui ratione
+                                                        voluptatem sequi
+                                                        nesciunt
+                                                    </p>
+                                                </div></div>
+                                            <div class="col-xl-6 col-lg-6">
+
+                                                <div
+                                                    class="tf__single_skill_2 fade_bottom"
+                                                    data-trigerid="skills"
+                                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                                    <h3>BBA</h3>
+                                                    <h2>University of Dhaka</h2>
+                                                    <h4>2009 - 2012</h4>
+                                                    <p>
+                                                        Nemo enim ipsam
+                                                        voluptatem quia voluptas
+                                                        sit
+                                                        aspernatur aut odit aut
+                                                        fugit sed thisnquia
+                                                        consequuntur magni
+                                                        dolores eos qui ratione
+                                                        voluptatem sequi
+                                                        nesciunt
+                                                    </p>
+                                                </div></div>
+                                            <div class="col-xl-6 col-lg-6">
+
+                                                <div
+                                                    class="tf__single_skill_2 fade_bottom"
+                                                    data-trigerid="skills"
+                                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                                    <h3>HSC</h3>
+                                                    <h2>Govt Bangla College</h2>
+                                                    <h4>2009 - 2012</h4>
+                                                    <p>
+                                                        Nemo enim ipsam
+                                                        voluptatem quia voluptas
+                                                        sit
+                                                        aspernatur aut odit aut
+                                                        fugit sed thisnquia
+                                                        consequuntur magni
+                                                        dolores eos qui ratione
+                                                        voluptatem sequi
+                                                        nesciunt
+                                                    </p>
+                                                </div></div>
+                                            <div class="col-xl-6 col-lg-6">
+
+                                                <div
+                                                    class="tf__single_skill_2 fade_bottom"
+                                                    data-trigerid="skills"
+                                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                                    <h3>SSC</h3>
+                                                    <h2>Govt Bangla College</h2>
+                                                    <h4>2009 - 2012</h4>
+                                                    <p>
+                                                        Nemo enim ipsam
+                                                        voluptatem quia voluptas
+                                                        sit
+                                                        aspernatur aut odit aut
+                                                        fugit sed thisnquia
+                                                        consequuntur magni
+                                                        dolores eos qui ratione
+                                                        voluptatem sequi
+                                                        nesciunt
+                                                    </p>
+                                                </div></div>
                                         </div>
-                                        <span class="fill" data-percentage="90"></span>
-                                      </div>
                                     </div>
-                                  </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6">
-                                  <div class="tf__single_skill_2 fade_bottom" data-trigerid="skills" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                                    <h3>Softech Agency</h3>
-                                    <h2>Wordpress and End Developer</h2>
-                                    <h4>2014 - 2018</h4>
-                                    <p>
-                                      Nemo enim ipsam voluptatem quia voluptas sit
-                                      aspernatur aut odit aut fugit sed thisnquia
-                                      consequuntur magni dolores eos qui ratione
-                                      voluptatem sequi nesciunt
-                                    </p>
-                                    <div class="tf__team_skills_bar_single">
-                                      <p>Performence</p>
-                                      <div id="bar3" class="barfiller">
-                                        <div class="tipWrap">
-                                          <span class="tip"></span>
+                                    <div class="tab-pane fade"
+                                        id="pills-contact" role="tabpanel"
+                                        aria-labelledby="pills-contact-tab"
+                                        tabindex="0">
+                                        <div class="row education">
+                                            <div class="col-xl-6 col-lg-6">
+
+                                                <div
+                                                    class="tf__single_skill_2 fade_bottom"
+                                                    data-trigerid="skills"
+                                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                                    <h3>MBA</h3>
+                                                    <h2>University of Dhaka</h2>
+                                                    <h4>2009 - 2012</h4>
+                                                    <p>
+                                                        Nemo enim ipsam
+                                                        voluptatem quia voluptas
+                                                        sit
+                                                        aspernatur aut odit aut
+                                                        fugit sed thisnquia
+                                                        consequuntur magni
+                                                        dolores eos qui ratione
+                                                        voluptatem sequi
+                                                        nesciunt
+                                                    </p>
+                                                </div></div>
+                                            <div class="col-xl-6 col-lg-6">
+
+                                                <div
+                                                    class="tf__single_skill_2 fade_bottom"
+                                                    data-trigerid="skills"
+                                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                                    <h3>BBA</h3>
+                                                    <h2>University of Dhaka</h2>
+                                                    <h4>2009 - 2012</h4>
+                                                    <p>
+                                                        Nemo enim ipsam
+                                                        voluptatem quia voluptas
+                                                        sit
+                                                        aspernatur aut odit aut
+                                                        fugit sed thisnquia
+                                                        consequuntur magni
+                                                        dolores eos qui ratione
+                                                        voluptatem sequi
+                                                        nesciunt
+                                                    </p>
+                                                </div></div>
+                                            <div class="col-xl-6 col-lg-6">
+
+                                                <div
+                                                    class="tf__single_skill_2 fade_bottom"
+                                                    data-trigerid="skills"
+                                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                                    <h3>HSC</h3>
+                                                    <h2>Govt Bangla College</h2>
+                                                    <h4>2009 - 2012</h4>
+                                                    <p>
+                                                        Nemo enim ipsam
+                                                        voluptatem quia voluptas
+                                                        sit
+                                                        aspernatur aut odit aut
+                                                        fugit sed thisnquia
+                                                        consequuntur magni
+                                                        dolores eos qui ratione
+                                                        voluptatem sequi
+                                                        nesciunt
+                                                    </p>
+                                                </div></div>
+                                            <div class="col-xl-6 col-lg-6">
+
+                                                <div
+                                                    class="tf__single_skill_2 fade_bottom"
+                                                    data-trigerid="skills"
+                                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                                    <h3>SSC</h3>
+                                                    <h2>Govt Bangla College</h2>
+                                                    <h4>2009 - 2012</h4>
+                                                    <p>
+                                                        Nemo enim ipsam
+                                                        voluptatem quia voluptas
+                                                        sit
+                                                        aspernatur aut odit aut
+                                                        fugit sed thisnquia
+                                                        consequuntur magni
+                                                        dolores eos qui ratione
+                                                        voluptatem sequi
+                                                        nesciunt
+                                                    </p>
+                                                </div></div>
                                         </div>
-                                        <span class="fill" data-percentage="75"></span>
-                                      </div>
                                     </div>
-                                  </div>
-                                </div>
-                                <div class="col-xl-6 col-lg-6">
-                                  <div class="tf__single_skill_2 fade_bottom" data-trigerid="skills" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                                    <h3>Kent State University</h3>
-                                    <h2>Master Degree Of information Technology</h2>
-                                    <h4>2005 - 2009</h4>
-                                    <p>
-                                      Nemo enim ipsam voluptatem quia voluptas sit
-                                      aspernatur aut odit aut fugit sed thisnquia
-                                      consequuntur magni dolores eos qui ratione
-                                      voluptatem sequi nesciunt
-                                    </p>
-                                    <div class="tf__team_skills_bar_single">
-                                      <p>Performence</p>
-                                      <div id="bar4" class="barfiller">
-                                        <div class="tipWrap">
-                                          <span class="tip"></span>
+                                    <div class="tab-pane fade"
+                                        id="pills-disabled" role="tabpanel"
+                                        aria-labelledby="pills-disabled-tab"
+                                        tabindex="0">
+                                        <div class="row education">
+                                            <div class="col-xl-6 col-lg-6">
+
+                                                <div
+                                                    class="tf__single_skill_2 fade_bottom"
+                                                    data-trigerid="skills"
+                                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                                    <h3>MBA</h3>
+                                                    <h2>University of Dhaka</h2>
+                                                    <h4>2009 - 2012</h4>
+                                                    <p>
+                                                        Nemo enim ipsam
+                                                        voluptatem quia voluptas
+                                                        sit
+                                                        aspernatur aut odit aut
+                                                        fugit sed thisnquia
+                                                        consequuntur magni
+                                                        dolores eos qui ratione
+                                                        voluptatem sequi
+                                                        nesciunt
+                                                    </p>
+                                                </div></div>
+                                            <div class="col-xl-6 col-lg-6">
+
+                                                <div
+                                                    class="tf__single_skill_2 fade_bottom"
+                                                    data-trigerid="skills"
+                                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                                    <h3>BBA</h3>
+                                                    <h2>University of Dhaka</h2>
+                                                    <h4>2009 - 2012</h4>
+                                                    <p>
+                                                        Nemo enim ipsam
+                                                        voluptatem quia voluptas
+                                                        sit
+                                                        aspernatur aut odit aut
+                                                        fugit sed thisnquia
+                                                        consequuntur magni
+                                                        dolores eos qui ratione
+                                                        voluptatem sequi
+                                                        nesciunt
+                                                    </p>
+                                                </div></div>
+                                            <div class="col-xl-6 col-lg-6">
+
+                                                <div
+                                                    class="tf__single_skill_2 fade_bottom"
+                                                    data-trigerid="skills"
+                                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                                    <h3>HSC</h3>
+                                                    <h2>Govt Bangla College</h2>
+                                                    <h4>2009 - 2012</h4>
+                                                    <p>
+                                                        Nemo enim ipsam
+                                                        voluptatem quia voluptas
+                                                        sit
+                                                        aspernatur aut odit aut
+                                                        fugit sed thisnquia
+                                                        consequuntur magni
+                                                        dolores eos qui ratione
+                                                        voluptatem sequi
+                                                        nesciunt
+                                                    </p>
+                                                </div></div>
+                                            <div class="col-xl-6 col-lg-6">
+
+                                                <div
+                                                    class="tf__single_skill_2 fade_bottom"
+                                                    data-trigerid="skills"
+                                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                                    <h3>SSC</h3>
+                                                    <h2>Govt Bangla College</h2>
+                                                    <h4>2009 - 2012</h4>
+                                                    <p>
+                                                        Nemo enim ipsam
+                                                        voluptatem quia voluptas
+                                                        sit
+                                                        aspernatur aut odit aut
+                                                        fugit sed thisnquia
+                                                        consequuntur magni
+                                                        dolores eos qui ratione
+                                                        voluptatem sequi
+                                                        nesciunt
+                                                    </p>
+                                                </div></div>
                                         </div>
-                                        <span class="fill" data-percentage="70"></span>
-                                      </div>
                                     </div>
-                                  </div>
                                 </div>
-                              </div>
                             </div>
-                            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
-                              <div class="row education">
-                                <div class="col-xl-6 col-lg-6">
-                                <div class="tf__single_skill_2 fade_bottom" data-trigerid="skills" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                                    <h3>MBA</h3>
-                                    <h2>University of Dhaka</h2>
-                                    <h4>2009 - 2012</h4>
-                                    <p>
-                                      Nemo enim ipsam voluptatem quia voluptas sit
-                                      aspernatur aut odit aut fugit sed thisnquia
-                                      consequuntur magni dolores eos qui ratione
-                                      voluptatem sequi nesciunt
-                                    </p>
-                                  </div></div>
-                                <div class="col-xl-6 col-lg-6">
-                                  
-                                <div class="tf__single_skill_2 fade_bottom" data-trigerid="skills" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                                    <h3>BBA</h3>
-                                    <h2>University of Dhaka</h2>
-                                    <h4>2009 - 2012</h4>
-                                    <p>
-                                      Nemo enim ipsam voluptatem quia voluptas sit
-                                      aspernatur aut odit aut fugit sed thisnquia
-                                      consequuntur magni dolores eos qui ratione
-                                      voluptatem sequi nesciunt
-                                    </p>
-                                  </div></div>
-                                <div class="col-xl-6 col-lg-6">
-                                  
-                                <div class="tf__single_skill_2 fade_bottom" data-trigerid="skills" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                                    <h3>HSC</h3>
-                                    <h2>Govt Bangla College</h2>
-                                    <h4>2009 - 2012</h4>
-                                    <p>
-                                      Nemo enim ipsam voluptatem quia voluptas sit
-                                      aspernatur aut odit aut fugit sed thisnquia
-                                      consequuntur magni dolores eos qui ratione
-                                      voluptatem sequi nesciunt
-                                    </p>
-                                  </div></div>
-                                <div class="col-xl-6 col-lg-6">
-                                  
-                                <div class="tf__single_skill_2 fade_bottom" data-trigerid="skills" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                                    <h3>SSC</h3>
-                                    <h2>Govt Bangla College</h2>
-                                    <h4>2009 - 2012</h4>
-                                    <p>
-                                      Nemo enim ipsam voluptatem quia voluptas sit
-                                      aspernatur aut odit aut fugit sed thisnquia
-                                      consequuntur magni dolores eos qui ratione
-                                      voluptatem sequi nesciunt
-                                    </p>
-                                  </div></div>
-                              </div>
-                            </div>
-                            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
-                              <div class="row education">
-                                <div class="col-xl-6 col-lg-6">
-                                  
-                                <div class="tf__single_skill_2 fade_bottom" data-trigerid="skills" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                                    <h3>MBA</h3>
-                                    <h2>University of Dhaka</h2>
-                                    <h4>2009 - 2012</h4>
-                                    <p>
-                                      Nemo enim ipsam voluptatem quia voluptas sit
-                                      aspernatur aut odit aut fugit sed thisnquia
-                                      consequuntur magni dolores eos qui ratione
-                                      voluptatem sequi nesciunt
-                                    </p>
-                                  </div></div>
-                                <div class="col-xl-6 col-lg-6">
-                                  
-                                <div class="tf__single_skill_2 fade_bottom" data-trigerid="skills" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                                    <h3>BBA</h3>
-                                    <h2>University of Dhaka</h2>
-                                    <h4>2009 - 2012</h4>
-                                    <p>
-                                      Nemo enim ipsam voluptatem quia voluptas sit
-                                      aspernatur aut odit aut fugit sed thisnquia
-                                      consequuntur magni dolores eos qui ratione
-                                      voluptatem sequi nesciunt
-                                    </p>
-                                  </div></div>
-                                <div class="col-xl-6 col-lg-6">
-                                  
-                                <div class="tf__single_skill_2 fade_bottom" data-trigerid="skills" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                                    <h3>HSC</h3>
-                                    <h2>Govt Bangla College</h2>
-                                    <h4>2009 - 2012</h4>
-                                    <p>
-                                      Nemo enim ipsam voluptatem quia voluptas sit
-                                      aspernatur aut odit aut fugit sed thisnquia
-                                      consequuntur magni dolores eos qui ratione
-                                      voluptatem sequi nesciunt
-                                    </p>
-                                  </div></div>
-                                <div class="col-xl-6 col-lg-6">
-                                  
-                                <div class="tf__single_skill_2 fade_bottom" data-trigerid="skills" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                                    <h3>SSC</h3>
-                                    <h2>Govt Bangla College</h2>
-                                    <h4>2009 - 2012</h4>
-                                    <p>
-                                      Nemo enim ipsam voluptatem quia voluptas sit
-                                      aspernatur aut odit aut fugit sed thisnquia
-                                      consequuntur magni dolores eos qui ratione
-                                      voluptatem sequi nesciunt
-                                    </p>
-                                  </div></div>
-                              </div>
-                            </div>
-                            <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">
-                              <div class="row education">
-                                <div class="col-xl-6 col-lg-6">
-                                  
-                                <div class="tf__single_skill_2 fade_bottom" data-trigerid="skills" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                                    <h3>MBA</h3>
-                                    <h2>University of Dhaka</h2>
-                                    <h4>2009 - 2012</h4>
-                                    <p>
-                                      Nemo enim ipsam voluptatem quia voluptas sit
-                                      aspernatur aut odit aut fugit sed thisnquia
-                                      consequuntur magni dolores eos qui ratione
-                                      voluptatem sequi nesciunt
-                                    </p>
-                                  </div></div>
-                                <div class="col-xl-6 col-lg-6">
-                                  
-                                <div class="tf__single_skill_2 fade_bottom" data-trigerid="skills" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                                    <h3>BBA</h3>
-                                    <h2>University of Dhaka</h2>
-                                    <h4>2009 - 2012</h4>
-                                    <p>
-                                      Nemo enim ipsam voluptatem quia voluptas sit
-                                      aspernatur aut odit aut fugit sed thisnquia
-                                      consequuntur magni dolores eos qui ratione
-                                      voluptatem sequi nesciunt
-                                    </p>
-                                  </div></div>
-                                <div class="col-xl-6 col-lg-6">
-                                  
-                                <div class="tf__single_skill_2 fade_bottom" data-trigerid="skills" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                                    <h3>HSC</h3>
-                                    <h2>Govt Bangla College</h2>
-                                    <h4>2009 - 2012</h4>
-                                    <p>
-                                      Nemo enim ipsam voluptatem quia voluptas sit
-                                      aspernatur aut odit aut fugit sed thisnquia
-                                      consequuntur magni dolores eos qui ratione
-                                      voluptatem sequi nesciunt
-                                    </p>
-                                  </div></div>
-                                <div class="col-xl-6 col-lg-6">
-                                  
-                                <div class="tf__single_skill_2 fade_bottom" data-trigerid="skills" style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
-                                    <h3>SSC</h3>
-                                    <h2>Govt Bangla College</h2>
-                                    <h4>2009 - 2012</h4>
-                                    <p>
-                                      Nemo enim ipsam voluptatem quia voluptas sit
-                                      aspernatur aut odit aut fugit sed thisnquia
-                                      consequuntur magni dolores eos qui ratione
-                                      voluptatem sequi nesciunt
-                                    </p>
-                                  </div></div>
-                              </div>
-                            </div>
-                          </div>
                         </div>
-                      </div>
                     </div>
                 </section>
-                <section id="portfolio" class="tf__portfolio tf__portfolio_2 mt_120 xs_mt_80">
+                <!--=======================================================================
+                //////////////////////////////// SKILLS END ///////////////////////////////
+                ========================================================================-->
+
+
+                <!--=======================================================================
+                ///////////////////////////// PORTFOLIO START /////////////////////////////
+                ========================================================================-->
+                <section id="portfolio"
+                    class="tf__portfolio tf__portfolio_2 mt_120 xs_mt_80">
                     <div class="container">
-                      <div class="row">
-                        <div class="col-xl-10 col-lg-9 mb_30">
-                          <div class="tf__section_heading">
-                            <h5 class="has-animation" style="">my recent Portfolio</h5>
-                            <h2 class="has-animation" style="">Elevate your brand to new heights with our portfolio expertise</h2>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-xl-6 col-sm-6">
-                          <a href="https://www.youtube.com/watch?v=B-ytMSuwbf8" class="tf__portfolio_item play_btn" data-cursor="Watch <br> video">
-                            <img src="https://zyan.vercel.app/images/portfolio/5.png" alt="portfolio" class="img-fluid w-100">
-                            <div class="text">
-                              <h4>sheet metal bending</h4>
-                              <p>youtube</p>
-                            </div>
-                          </a>
-                        </div>
-                        <div class="col-xl-6 col-sm-6">
-                          <a class="tf__portfolio_item play_btn" href="https://vimeo.com/132528823" data-cursor="Watch <br> video">
-                            <img src="https://zyan.vercel.app/images/portfolio/6.png" alt="portfolio" class="img-fluid w-100">
-                            <div class="text">
-                              <h4>sheet metal bending</h4>
-                              <p>Vimeo</p>
-                            </div>
-                          </a>
-                        </div>
-                        <div class="col-xl-4 col-sm-6">
-                          <a href="https://w.soundcloud.com/player/?visual=true&amp;url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F159967086&amp;show_artwork=true&amp;maxwidth=1020&amp;maxheight=1000&amp;auto_play=1" class="tf__portfolio_item play_btn" data-cursor="Audio <br> sound">
-                            <img src="https://zyan.vercel.app/images/portfolio/7.png" alt="portfolio" class="img-fluid w-100">
-                            <div class="text">
-                              <h4>sheet metal bending</h4>
-                              <p>soundcloud</p>
-                            </div>
-                          </a>
-                        </div>
-                        <div class="col-xl-4 col-sm-6">
-                          <a href="https://zyan.vercel.app/images/portfolio/8.png" class="tf__portfolio_item image_popup" data-cursor="View <br> Image">
-                            <img src="https://zyan.vercel.app/images/portfolio/8.png" alt="portfolio" class="img-fluid w-100">
-                            <div class="text">
-                              <h4>sheet metal bending</h4>
-                              <p>Image</p>
-                            </div>
-                          </a>
-                        </div>
-                        <div class="col-xl-4 col-sm-6">
-                          <a href="#details-popup" class="tf__portfolio_item details" data-cursor="Details <br> View">
-                            <img src="https://zyan.vercel.app/images/portfolio/9.png" alt="portfolio" class="img-fluid w-100">
-                            <div class="text">
-                              <h4>sheet metal bending</h4>
-                              <p>Modalbox</p>
-                            </div>
-                          </a>
-                          <div class="mfp-fade mfp-hide" id="details-popup">
-                            <div class="content">
-                              <div class="img">
-                                <img src="https://zyan.vercel.app/images/portfolio/9.png" alt="">
-                              </div>
-                              <div class="des">
-                                <span class="category">Modalbox</span>
-                                <h4 class="popup_title">Mobile Application</h4>
-                                <p>
-                                  We live in a world where we need to move quickly and
-                                  iterate on our ideas as flexibly as possible. Building
-                                  mockups strikes the ideal balance between true-life
-                                  representation of the end product and ease of
-                                  modification.
-                                </p>
-                                <div class="details_quot_text">
-                                  <p>
-                                    ished fact that a reader will be distrol acted bioii
-                                    the.ished fact that a reader .
-                                  </p>
-                                  <h4>By Insuzu Litarnit</h4>
+                        <div class="row">
+                            <div class="col-xl-10 col-lg-9 mb_30">
+                                <div class="tf__section_heading">
+                                    <h5 class="has-animation" style>my recent
+                                        Portfolio</h5>
+                                    <h2 class="has-animation" style>Elevate your
+                                        brand to new heights with our portfolio
+                                        expertise</h2>
                                 </div>
-                                <p>
-                                  Mockups are useful both for the creative phase of the
-                                  project - for instance when you're trying to figure out
-                                  your user flows or the proper visual hierarchy - and the
-                                  production phase when they will represent the target
-                                  product. Making mockups a part of your creative and
-                                  development process allows you to quickly and easily
-                                  ideate.
-                                </p>
-                              </div>
                             </div>
-                          </div>
                         </div>
-                      </div>
+                        <div class="row">
+                            <div class="col-xl-6 col-sm-6">
+                                <a
+                                    href="https://www.youtube.com/watch?v=B-ytMSuwbf8"
+                                    class="tf__portfolio_item play_btn"
+                                    data-cursor="Watch <br> video">
+                                    <img
+                                        src="https://zyan.vercel.app/images/portfolio/5.png"
+                                        alt="portfolio" class="img-fluid w-100">
+                                    <div class="text">
+                                        <h4>sheet metal bending</h4>
+                                        <p>youtube</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xl-6 col-sm-6">
+                                <a class="tf__portfolio_item play_btn"
+                                    href="https://vimeo.com/132528823"
+                                    data-cursor="Watch <br> video">
+                                    <img
+                                        src="https://zyan.vercel.app/images/portfolio/6.png"
+                                        alt="portfolio" class="img-fluid w-100">
+                                    <div class="text">
+                                        <h4>sheet metal bending</h4>
+                                        <p>Vimeo</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xl-4 col-sm-6">
+                                <a
+                                    href="https://w.soundcloud.com/player/?visual=true&amp;url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F159967086&amp;show_artwork=true&amp;maxwidth=1020&amp;maxheight=1000&amp;auto_play=1"
+                                    class="tf__portfolio_item play_btn"
+                                    data-cursor="Audio <br> sound">
+                                    <img
+                                        src="https://zyan.vercel.app/images/portfolio/7.png"
+                                        alt="portfolio" class="img-fluid w-100">
+                                    <div class="text">
+                                        <h4>sheet metal bending</h4>
+                                        <p>soundcloud</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xl-4 col-sm-6">
+                                <a
+                                    href="https://zyan.vercel.app/images/portfolio/8.png"
+                                    class="tf__portfolio_item image_popup"
+                                    data-cursor="View <br> Image">
+                                    <img
+                                        src="https://zyan.vercel.app/images/portfolio/8.png"
+                                        alt="portfolio" class="img-fluid w-100">
+                                    <div class="text">
+                                        <h4>sheet metal bending</h4>
+                                        <p>Image</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-xl-4 col-sm-6">
+                                <a href="#details-popup"
+                                    class="tf__portfolio_item details"
+                                    data-cursor="Details <br> View">
+                                    <img
+                                        src="https://zyan.vercel.app/images/portfolio/9.png"
+                                        alt="portfolio" class="img-fluid w-100">
+                                    <div class="text">
+                                        <h4>sheet metal bending</h4>
+                                        <p>Modalbox</p>
+                                    </div>
+                                </a>
+                                <div class="mfp-fade mfp-hide"
+                                    id="details-popup">
+                                    <div class="content">
+                                        <div class="img">
+                                            <img
+                                                src="https://zyan.vercel.app/images/portfolio/9.png"
+                                                alt>
+                                        </div>
+                                        <div class="des">
+                                            <span
+                                                class="category">Modalbox</span>
+                                            <h4 class="popup_title">Mobile
+                                                Application</h4>
+                                            <p>
+                                                We live in a world where we need
+                                                to move quickly and
+                                                iterate on our ideas as flexibly
+                                                as possible. Building
+                                                mockups strikes the ideal
+                                                balance between true-life
+                                                representation of the end
+                                                product and ease of
+                                                modification.
+                                            </p>
+                                            <div class="details_quot_text">
+                                                <p>
+                                                    ished fact that a reader
+                                                    will be distrol acted bioii
+                                                    the.ished fact that a reader
+                                                    .
+                                                </p>
+                                                <h4>By Insuzu Litarnit</h4>
+                                            </div>
+                                            <p>
+                                                Mockups are useful both for the
+                                                creative phase of the
+                                                project - for instance when
+                                                you're trying to figure out
+                                                your user flows or the proper
+                                                visual hierarchy - and the
+                                                production phase when they will
+                                                represent the target
+                                                product. Making mockups a part
+                                                of your creative and
+                                                development process allows you
+                                                to quickly and easily
+                                                ideate.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
+                <!--=======================================================================
+                ////////////////////////////// PORTFOLIO END //////////////////////////////
+                ========================================================================-->
+
+
+                <!--=======================================================================
+                //////////////////////////////// BLOG START ///////////////////////////////
+                ========================================================================-->
+                <section id="blog"
+                    class="tf__blog_2 pt_120 xs_pt_80 pb_120 xs_pb_80">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-8 m-auto mb_30">
+                                <div class="tf__section_heading">
+                                    <h5 class="has-animation" style>all
+                                        blog</h5>
+                                    <h2 class="has-animation" style>Rafting
+                                        Unique Experiences Inspiring
+                                        Connections</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row animation">
+                            <div class="col-xl-4 col-md-6">
+                                <div class="tf__slingle_blog_2 fade_left"
+                                    data-trigerid="blog"
+                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                    <a href="blog_details.html"
+                                        data-cursor="Read <br> More"
+                                        class="tf__blog_img_2">
+                                        <img
+                                            src="https://zyan.vercel.app/images/blog/4.jpg"
+                                            alt="blog" class="img-fluid w-100">
+                                        <span>10 June</span>
+                                    </a>
+                                    <div class="tf__blog_text_2">
+                                        <ul>
+                                            <li>
+                                                <i
+                                                    class="fa-sharp fa-solid fa-circle-user"></i>
+                                                By
+                                                admin
+                                            </li>
+                                            <li>
+                                                <i
+                                                    class="fa-sharp fa-solid fa-comments"></i>
+                                                Comments
+                                                (05)
+                                            </li>
+                                        </ul>
+                                        <a class="title"
+                                            href="blog_details.html">Where
+                                            Passion and Purpose Collide</a>
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of
+                                            the printing and types
+                                            etting in our company here thisn
+                                            designers give me more
+                                            design here […]
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-6">
+                                <div class="tf__slingle_blog_2 fade_left"
+                                    data-trigerid="blog"
+                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                    <a href="blog_details.html"
+                                        data-cursor="Read <br> More"
+                                        class="tf__blog_img_2">
+                                        <img
+                                            src="https://zyan.vercel.app/images/blog/5.jpg"
+                                            alt="blog" class="img-fluid w-100">
+                                        <span>10 June</span>
+                                    </a>
+                                    <div class="tf__blog_text_2">
+                                        <ul>
+                                            <li>
+                                                <i
+                                                    class="fa-sharp fa-solid fa-circle-user"></i>
+                                                By
+                                                admin
+                                            </li>
+                                            <li>
+                                                <i
+                                                    class="fa-sharp fa-solid fa-comments"></i>
+                                                Comments
+                                                (05)
+                                            </li>
+                                        </ul>
+                                        <a class="title"
+                                            href="blog_details.html">Where
+                                            Passion and Purpose Collide</a>
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of
+                                            the printing and types
+                                            etting in our company here thisn
+                                            designers give me more
+                                            design here […]
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-6">
+                                <div class="tf__slingle_blog_2 fade_left"
+                                    data-trigerid="blog"
+                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                    <a href="blog_details.html"
+                                        data-cursor="Read <br> More"
+                                        class="tf__blog_img_2">
+                                        <img
+                                            src="https://zyan.vercel.app/images/blog/6.jpg"
+                                            alt="blog" class="img-fluid w-100">
+                                        <span>10 June</span>
+                                    </a>
+                                    <div class="tf__blog_text_2">
+                                        <ul>
+                                            <li>
+                                                <i
+                                                    class="fa-sharp fa-solid fa-circle-user"></i>
+                                                By
+                                                admin
+                                            </li>
+                                            <li>
+                                                <i
+                                                    class="fa-sharp fa-solid fa-comments"></i>
+                                                Comments
+                                                (05)
+                                            </li>
+                                        </ul>
+                                        <a class="title"
+                                            href="blog_details.html">Where
+                                            Passion and Purpose Collide</a>
+                                        <p>
+                                            Lorem Ipsum is simply dummy text of
+                                            the printing and types
+                                            etting in our company here thisn
+                                            designers give me more
+                                            design here […]
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--=======================================================================
+                ///////////////////////////////// BLOG END ////////////////////////////////
+                ========================================================================-->
+                
+
+                <!--=======================================================================
+                ////////////////////////////// CONTACT START //////////////////////////////
+                ========================================================================-->
+                <section id="contact" class="tf__contact_2 pt_95 xs_pt_45">
+                    <div class="container">
+                        <div class="row animation">
+                            <div class="col-xl-4 col-md-6 col-lg-4">
+                                <div class="tf__contact_2_text fade_left"
+                                    data-trigerid="contact"
+                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                    <span>
+                                        <svg width="73" height="69"
+                                            viewBox="0 0 73 69" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            id="null"
+                                            class="img-fluid w-100 svg replaced-svg">
+                                            <path
+                                                d="M20.0547 52.587L20.0908 52.5469"
+                                                stroke="#55E6A5"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                            <path
+                                                d="M20.0556 9.21875H4.16667C2.97005 9.21875 2 10.1888 2 11.3854V64.8299C2 66.0266 2.97005 66.9965 4.16667 66.9965H35.9444C37.1412 66.9965 38.1111 66.0266 38.1111 64.8299V48.941"
+                                                stroke="#55E6A5"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                            <path d="M48.9453 2V38.1111"
+                                                stroke="#55E6A5"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                            <path d="M38.1113 9.21875V30.8854"
+                                                stroke="#55E6A5"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                            <path d="M70.6113 16.4453V23.6675"
+                                                stroke="#55E6A5"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                            <path d="M27.2773 16.4453V23.6675"
+                                                stroke="#55E6A5"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                            <path d="M59.7773 5.60938V34.4983"
+                                                stroke="#55E6A5"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                        </svg>
+                                    </span>
+                                    <h3>Phone</h3>
+                                    <p>
+                                        Loram ipsum eros justo, posuer oborti
+                                        viverra laor house of
+                                        street
+                                    </p>
+                                    <a
+                                        href="callto:12345664746846">123-45664-746846</a>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-6 col-lg-4">
+                                <div class="tf__contact_2_text fade_left"
+                                    data-trigerid="contact"
+                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                    <span>
+                                        <svg width="66" height="69"
+                                            viewBox="0 0 66 69" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            id="null"
+                                            class="img-fluid w-100 svg replaced-svg">
+                                            <path
+                                                d="M22.1407 55.7085L4.65098 61.5385C3.34681 61.9732 2 61.0025 2 59.6275V10.1652C2 9.29831 2.55474 8.52863 3.37715 8.25452L22.1407 2M22.1407 55.7085L39.6305 61.5385C40.9346 61.9732 42.2814 61.0025 42.2814 59.6275V10.1652C42.2814 9.29831 41.7265 8.52863 40.9041 8.25452L22.1407 2M22.1407 55.7085V2"
+                                                stroke="#55E6A5"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                            <path
+                                                d="M42.2812 8.71604L59.7711 2.88616C61.0752 2.45142 62.4219 3.42213 62.4219 4.79687V42.2838"
+                                                stroke="#55E6A5"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                            <path
+                                                d="M49.4004 66.9996L56.5215 59.8789M56.5215 59.8789L63.6422 52.7578M56.5215 59.8789L49.4004 52.7578M56.5215 59.8789L63.6422 66.9996"
+                                                stroke="#55E6A5"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                        </svg>
+                                    </span>
+                                    <h3>Location</h3>
+                                    <p>
+                                        Dhaka 102, m eros justo, posuer oborti
+                                        viverra laor house of
+                                        street
+                                    </p>
+                                    <a href="#">View on map</a>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-6 col-lg-4">
+                                <div class="tf__contact_2_text fade_left"
+                                    data-trigerid="contact"
+                                    style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
+                                    <span>
+                                        <svg width="69" height="69"
+                                            viewBox="0 0 101 69" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            id="null"
+                                            class="img-fluid w-100 svg replaced-svg">
+                                            <path
+                                                d="M39.1426 20.5703L60.0354 34.4989L80.9283 20.5703"
+                                                stroke="#55E6A5"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                            <path d="M11.2871 41.4688H20.5728"
+                                                stroke="#55E6A5"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                            <path d="M2 27.5312H20.5714"
+                                                stroke="#55E6A5"
+                                                stroke-width="3"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                            <path
+                                                d="M20.5723 13.6071V11.2857C20.5723 6.15735 24.7296 2 29.858 2H90.2151C95.3436 2 99.5008 6.15735 99.5008 11.2857V57.7143C99.5008 62.8428 95.3436 67 90.2151 67H29.858C24.7296 67 20.5723 62.8428 20.5723 57.7143V55.3929"
+                                                stroke="#55E6A5"
+                                                stroke-width="3"
+                                                stroke-linecap="round"></path>
+                                        </svg>
+                                    </span>
+                                    <h3>Monday - Sunday</h3>
+                                    <p>
+                                        Dhaka 102, m eros justo, posuer oborti
+                                        viverra laor house of
+                                        street
+                                    </p>
+                                    <a
+                                        href="mailto:hfavouriteemail@gmail.com">hfavouriteemail@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact_form_2">
+                            <form>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <input type="text"
+                                            placeholder="Your Name Here">
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <input type="text"
+                                            placeholder="Subject">
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <input type="email" placeholder="Email">
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea rows="5"
+                                            placeholder="Your Message Here"></textarea>
+                                    </div>
+                                </div>
+                                <button type="submit">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </section>
+                <!--=======================================================================
+                /////////////////////////////// CONTACT END ///////////////////////////////
+                ========================================================================-->
+
+
+                <!--=======================================================================
+                /////////////////////////////// FOOTER START //////////////////////////////
+                ========================================================================-->
+                <div class="footer_2_copyright_area mt_120 xs_mt_80">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="tf__footer_copyright">
+                                    <p style="width: 100%;">
+                                        © Yogesh Kumar 2025 | All Rights
+                                        Reserved
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--=======================================================================
+                //////////////////////////////// FOOTER END ///////////////////////////////
+                ========================================================================-->
+
+
+                <!--=======================================================================
+                ////////////////////////// PROGRESS-BUTTON START //////////////////////////
+                ========================================================================-->
+                <div class="circle-container">
+                    <svg class="circle-progress svg-content" width="100%"
+                        height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+                    </svg>
+                </div>
+                <!--=======================================================================
+                /////////////////////////// PROGRESS-BUTTON END ///////////////////////////
+                ========================================================================-->
+
+
+                <!--=======================================================================
+                /////////////////////////// MAGIC-CURSOR START ////////////////////////////
+                ========================================================================-->
+                <div id="cursor" class="cursor">
+                    <div class="ring">
+                        <div><!--Border--></div>
+                    </div>
+                    <div class="ring">
+                        <div><!--Pointer--></div>		
+                    </div>
+                </div>
+                <!--=======================================================================
+                //////////////////////////// MAGIC-CURSOR END /////////////////////////////
+                ========================================================================-->
             </div>
         </div>
 
-        
-
-        <script>
-            let menuIcon = document.querySelector('#menu_icon');
-            let menu = document.querySelector("#menu-bar");
-            let menuBtn = document.querySelector('#menu_btn');
-
-            menuIcon.onclick = () => {
-                menu.classList.toggle('show_menu')
-                menuIcon.classList.toggle('show_icon')
-                menuBtn.classList.toggle('fa-xmark')
-            }
-
-
-            const services = document.querySelectorAll('.tf_single_service');
-
-            services.forEach(service => {
-            service.onmouseover = () => {
-                // Remove 'active' from all
-                services.forEach(s => s.classList.remove('active'));
-                // Add 'active' to the current one
-                service.classList.add('active');
-            };
-            });
-        </script>
-
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-            const bars = document.querySelectorAll(".barfiller");
-            
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const fill = entry.target.querySelector(".fill");
-                    const tip = entry.target.querySelector(".tip");
-            
-                    if (fill && !fill.classList.contains("animated")) {
-                    const target = parseInt(fill.getAttribute("data-percentage"));
-                    fill.style.width = target + "%";
-                    fill.classList.add("animated");
-            
-                    // Animate tip count
-                    let count = 0;
-                    const step = Math.ceil(target / 30);
-                    const interval = setInterval(() => {
-                        if (count >= target) {
-                        tip.textContent = target + "%";
-                        clearInterval(interval);
-                        } else {
-                        count += step;
-                        tip.textContent = count + "%";
-                        }
-                    }, 30);
-                    }
-                }
-                });
-            }, {
-                threshold: 0.4
-            });
-            
-            bars.forEach(bar => observer.observe(bar));
-            });
-        </script>
-
-        <script>
-            let tabButtons = [
-                document.querySelector("#pills-home-tab"),
-                document.querySelector("#pills-profile-tab"),
-                document.querySelector("#pills-contact-tab"),
-                document.querySelector("#pills-disabled-tab")
-            ];
-
-            let tabContents = [
-                document.querySelector("#pills-home"),
-                document.querySelector("#pills-profile"),
-                document.querySelector("#pills-contact"),
-                document.querySelector("#pills-disabled")
-            ];
-
-            function activateTab(activeTab, allTabs, activeBtn, allBtns) {
-                allTabs.forEach(tab => tab.classList.remove('show', 'active'));
-                allBtns.forEach(btn => btn.classList.remove('active'));
-
-                activeTab.classList.add('show', 'active');
-                activeBtn.classList.add('active');
-            }
-
-            // Event listeners for buttons
-            tabButtons[0].onclick = () => activateTab(tabContents[0], tabContents, tabButtons[0], tabButtons);
-            tabButtons[1].onclick = () => activateTab(tabContents[1], tabContents, tabButtons[1], tabButtons);
-            tabButtons[2].onclick = () => activateTab(tabContents[2], tabContents, tabButtons[2], tabButtons);
-            tabButtons[3].onclick = () => activateTab(tabContents[3], tabContents, tabButtons[3], tabButtons);
-        </script>
-            
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-                const navLinks = document.querySelectorAll("nav li a");
-                const sections = document.querySelectorAll("section");
-
-                // CLICK: Add active class on nav link when clicked
-                navLinks.forEach(link => {
-                    link.addEventListener('click', function() {
-                        navLinks.forEach(l => l.classList.remove("active"));
-                        this.classList.add("active"); // add to clicked one
-                    });
-                });
-
-                // SCROLL: Add active class on nav link based on scroll position
-                window.addEventListener('scroll', function() {
-                    let current = "";
-                    const scrollY = window.scrollY + 150; // offset for sticky nav or smooth effect
-
-                    sections.forEach(section => {
-                        const sectionTop = section.offsetTop;
-                        const sectionHeight = section.offsetHeight;
-                        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-                            current = section.getAttribute("id");
-                        }
-                    });
-
-                    navLinks.forEach(link => {
-                        link.classList.remove("active");
-                        if (link.getAttribute("href") === `#${current}`) {
-                            link.classList.add("active");
-                        }
-                    });
-                });
-            });
-        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://unpkg.com/split-type"></script>
+        <script src="script.js"></script>
     </body>
 </html>
