@@ -25,7 +25,7 @@
             <!-- Massive counter -->
             <div class="counter-wrapper">
                 <div class="counter" id="counter">0</div>
-                <div class="counter-outline" aria-hidden="true">0</div>
+                <div class="counter-outline" aria-hidden="true"></div>
             </div>
 
             <!-- Status text -->
@@ -1684,14 +1684,17 @@
                 <!--=======================================================================
                 /////////////////////////// MAGIC-CURSOR START ////////////////////////////
                 ========================================================================-->
-                <!-- <div id="magic-cursor">
-                    <div id="ball" style="translate: none; rotate: none; scale: none; transform: translate(-50%, -50%) translate(332px, 5px); height: 30px; width: 30px; background-color: transparent; opacity: 0.5; border: 2px solid rgb(255, 255, 255);"></div>
-                </div> -->
-                <div id="circle-cursor"></div>
+                <div id="cursor" class="cursor">
+                    <div class="ring">
+                        <div><!--Border--></div>
+                    </div>
+                    <div class="ring">
+                        <div><!--Pointer--></div>		
+                    </div>
+                </div>
                 <!--=======================================================================
                 //////////////////////////// MAGIC-CURSOR END /////////////////////////////
                 ========================================================================-->
-
             </div>
         </div>
 

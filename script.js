@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Animation function for progress
     function animateProgress() {
-        const duration = 6; // Total loading time in seconds
+        const duration = 5; // Total loading time in seconds
 
         gsap.to(
             {},
@@ -55,11 +55,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Update progress function
     function updateProgress() {
-        // Calculate progress based on timeline progress
-        const progress = Math.floor(this.progress() * 100);
+        
 
         // Update counter target
-        targetCount = progress;
+        // targetCount = progress;
+        const counterProgress = Math.min(10, Math.floor(this.progress() * 10)); // Limit counter to 10
+        targetCount = counterProgress;
+
+        // Calculate progress based on timeline progress
+        const progress = Math.floor(this.progress() * 100);
 
         // Update UI
         updateCounter();
@@ -84,7 +88,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
             currentCount =
                 gap > 0 ? Math.min(targetCount, currentCount + step) : targetCount;
-            counter.textContent = currentCount;
+            // counter.textContent = currentCount;
+            counter.textContent = currentCount.toString().padStart(2, "0");
 
             // If not at target, schedule next update
             if (currentCount !== targetCount) {
