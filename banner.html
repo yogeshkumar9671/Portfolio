@@ -1664,7 +1664,7 @@
   PRELOADER START
 ===============================*/
 
-body.loaded {
+/* body.loaded {
   overflow: hidden !important;
   height: 100% !important;
 }
@@ -1727,10 +1727,348 @@ h5.preloader-text::after {
   to {
     clip-path: circle(50px at 100% 50%);
   }
-}
+} */
 /*==============================
   PRELOADER END
 ===============================*/
+</style>
+
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
+    :root {
+        --color-bg: #121212; /* Off-black */
+        --color-text: #f5f5f5; /* Off-white */
+        --color-dark: #1a1a1a; /* Slightly lighter than background */
+        --color-light: #e0e0e0; /* Slightly darker than text */
+
+        --font-primary: "Space Mono", monospace;
+        --font-size-massive: clamp(10rem, 20vw, 30rem);
+        --grid-size: 50px;
+        --transition-speed: 500ms;
+    }
+
+
+    /* Preloader */
+    .preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--color-bg);
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        z-index: 999999; 
+    }
+
+    /* Pixel Grid */
+    .pixel-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    }
+
+    .pixel-row,
+    .pixel-column {
+    position: absolute;
+    background-color: var(--color-text);
+    opacity: 0.1;
+    }
+
+    .pixel-row {
+    height: 1px;
+    width: 0%;
+    left: 0;
+    }
+
+    .pixel-column {
+    width: 1px;
+    height: 0%;
+    top: 0;
+    }
+
+    #top-row {
+    top: 20%;
+    }
+
+    #bottom-row {
+    bottom: 20%;
+    }
+
+    #left-column {
+    left: 20%;
+    }
+
+    #right-column {
+    right: 20%;
+    }
+
+    /* Block elements that fill progressively */
+    .block-container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+.block {
+  position: absolute;
+  background-color: var(--color-dark);
+  border: 1px solid rgba(245, 245, 245, 0.1);
+  transform-origin: center;
+  transform: scale(0);
+  transition: transform var(--transition-speed) cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+#block-1 {
+  top: 10%;
+  left: 10%;
+  width: 15vw;
+  height: 15vw;
+}
+
+#block-2 {
+  top: 10%;
+  right: 10%;
+  width: 20vw;
+  height: 20vw;
+}
+
+#block-3 {
+  bottom: 10%;
+  left: 10%;
+  width: 20vw;
+  height: 20vw;
+}
+
+#block-4 {
+  bottom: 10%;
+  right: 10%;
+  width: 15vw;
+  height: 15vw;
+}
+
+/* Counter */
+.counter-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  width: 100%;
+  text-align: center;
+}
+
+.counter {
+  font-size: var(--font-size-massive);
+  font-weight: 700;
+  line-height: 0.8;
+  color: var(--color-text);
+  position: relative;
+  display: inline-block;
+}
+
+.counter-outline {
+  font-size: var(--font-size-massive);
+  font-weight: 700;
+  line-height: 0.8;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(245, 245, 245, 0.1);
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Loading Text */
+.text-container {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  z-index: 10;
+}
+
+.loading-text {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.system-messages {
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.5;
+  opacity: 0.6;
+  height: 1.5em;
+  overflow: hidden;
+}
+
+.message {
+  display: none;
+}
+
+.message.active {
+  display: block;
+}
+
+/* Loading Bar */
+.loading-bar-container {
+  position: absolute;
+  bottom: 3rem;
+  left: 2rem;
+  right: 2rem;
+  z-index: 10;
+}
+
+.loading-bar {
+  height: 3px;
+  width: 100%;
+  background-color: rgba(245, 245, 245, 0.1);
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.progress {
+  height: 100%;
+  width: 0%;
+  background-color: var(--color-text);
+  transition: width var(--transition-speed) cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.loading-bar-markers {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 0.8rem;
+  opacity: 0.6;
+  position: relative;
+}
+
+.marker {
+  position: relative;
+  padding-top: 10px;
+  transition: opacity 0.3s ease;
+}
+
+.marker::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 5px;
+  background-color: var(--color-text);
+}
+
+/* Connector lines between markers */
+.connector-lines {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.connector-line {
+  position: absolute;
+  top: -12px;
+  height: 1px;
+  background-color: var(--color-text);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform var(--transition-speed) cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+#line-0-25 {
+  left: 0%;
+  width: 25%;
+}
+
+#line-25-50 {
+  left: 25%;
+  width: 25%;
+}
+
+#line-50-75 {
+  left: 50%;
+  width: 25%;
+}
+
+#line-75-100 {
+  left: 75%;
+  width: 25%;
+}
+
+/* Main Content */
+.content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 5;
+}
+
+.content h1 {
+  font-size: clamp(2rem, 7vw, 6rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+  letter-spacing: -1px;
+}
+
+.content p {
+  font-size: 1.5rem;
+  max-width: 800px;
+  text-align: center;
+  opacity: 0.7;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .text-container {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .loading-bar-container {
+    bottom: 2rem;
+    left: 1rem;
+    right: 1rem;
+  }
+
+  .loading-text {
+    font-size: 1.5rem;
+  }
+
+  .system-messages {
+    font-size: 0.8rem;
+  }
+
+  #block-1,
+  #block-2,
+  #block-3,
+  #block-4 {
+    width: 25vw;
+    height: 25vw;
+  }
+}
+
 </style>
     </head>
     <body class="home_2">
@@ -1738,12 +2076,64 @@ h5.preloader-text::after {
         <!--================================
             PRELOADER START
         =================================-->
-        <div class="preloader">
-        <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
-            <path id="svg" d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
-        </svg>
-        <h5 class="preloader-text">Loading</h5>
-        </div>
+
+<div class="preloader">
+  <!-- Pixel grid elements -->
+  <div class="pixel-grid">
+    <div class="pixel-row" id="top-row"></div>
+    <div class="pixel-row" id="bottom-row"></div>
+    <div class="pixel-column" id="left-column"></div>
+    <div class="pixel-column" id="right-column"></div>
+  </div>
+
+  <!-- Massive counter -->
+  <div class="counter-wrapper">
+    <div class="counter" id="counter">0</div>
+    <div class="counter-outline" aria-hidden="true">0</div>
+  </div>
+
+  <!-- Status text -->
+  <div class="text-container">
+    <div class="loading-text">LOADING SYSTEM</div>
+    <div class="system-messages">
+      <div class="message">INITIALIZING</div>
+      <div class="message">DATA_TRANSFER</div>
+      <div class="message">COMPILING</div>
+      <div class="message">FINALIZING</div>
+      <div class="message">COMPLETE</div>
+    </div>
+  </div>
+
+  <!-- Progress markers -->
+  <div class="loading-bar-container">
+    <div class="loading-bar">
+      <div class="progress"></div>
+    </div>
+    <div class="loading-bar-markers">
+      <div class="marker" data-position="0">00</div>
+      <div class="marker" data-position="25">25</div>
+      <div class="marker" data-position="50">50</div>
+      <div class="marker" data-position="75">75</div>
+      <div class="marker" data-position="100">100</div>
+    </div>
+    <!-- Progressive line fills -->
+    <div class="connector-lines">
+      <div class="connector-line" id="line-0-25"></div>
+      <div class="connector-line" id="line-25-50"></div>
+      <div class="connector-line" id="line-50-75"></div>
+      <div class="connector-line" id="line-75-100"></div>
+    </div>
+  </div>
+
+  <!-- Block elements that progressively fill -->
+  <div class="block-container">
+    <div class="block" id="block-1"></div>
+    <div class="block" id="block-2"></div>
+    <div class="block" id="block-3"></div>
+    <div class="block" id="block-4"></div>
+  </div>
+</div>
+
         <!--================================
             PRELOADER END
         =================================-->
@@ -1990,6 +2380,7 @@ h5.preloader-text::after {
                     </li>
                 </ul>
             </nav>
+            <div class="main">
                 <section id="banner"
                     style="background: url(banner.png);">
                     <div class="container">
@@ -3544,565 +3935,272 @@ h5.preloader-text::after {
             }
 
         </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script> <script src="https://unpkg.com/split-type"></script>
         <script>
-           /**
-             *	ZYAN - Personal Portfolio Templete (HTML)
-            *	Author: codeefly
-            *	Author URL: http://themeforest.net/user/codeefly
-            *	Copyright © ZYAN by codeefly. All Rights Reserved.
-            **/
+            document.addEventListener("DOMContentLoaded", () => {
+            // Get elements
+            const counter = document.getElementById("counter");
+            const progress = document.querySelector(".progress");
+            const messages = document.querySelectorAll(".message");
+            const markers = document.querySelectorAll(".marker");
+            const blocks = document.querySelectorAll(".block");
 
-            (function ($) {
-            "use strict";
-            console.clear();
+            // Get connector lines
+            const line0to25 = document.getElementById("line-0-25");
+            const line25to50 = document.getElementById("line-25-50");
+            const line50to75 = document.getElementById("line-50-75");
+            const line75to100 = document.getElementById("line-75-100");
 
-            let device_width = window.innerWidth;
-            gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+            // Get grid elements
+            const topRow = document.getElementById("top-row");
+            const bottomRow = document.getElementById("bottom-row");
+            const leftColumn = document.getElementById("left-column");
+            const rightColumn = document.getElementById("right-column");
 
-            var isMobile =
-                /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Nokia|Opera Mini/i.test(
-                navigator.userAgent
-                )
-                ? true
-                : false;
+            // Create pixel grid
+            createPixelGrid();
 
-            var zyan = {
-                /* ZYAN init */
-                init() {
-                zyan.imgToSvg(),
-                    zyan.mobileMenu(),
-                    zyan.counter(),
-                    zyan.slickSlider(),
-                    zyan.marquee(),
-                    zyan.stickySideBar(),
-                    zyan.textAnimation(),
-                    zyan.headingAnimation(),
-                    zyan.progressbar(),
-                    zyan.parallaxie(),
-                    zyan.animation(),
-                    zyan.customMouse(),
-                    zyan.magnificPopup(),
-                    zyan.serviceHover(),
-                    zyan.stickySideBar();
-                },
-                /* Svg to image */
-                imgToSvg() {
-                document.querySelectorAll("img.svg").forEach((el) => {
-                    const imgID = el.getAttribute("id");
-                    const imgClass = el.getAttribute("class");
-                    const imgURL = el.getAttribute("src");
-                    fetch(imgURL)
-                    .then((data) => data.text())
-                    .then((response) => {
-                        const parser = new DOMParser();
-                        const xmlDoc = parser.parseFromString(response, "text/html");
-                        let svg = xmlDoc.querySelector("svg");
-                        if (typeof imgID !== "undefined") {
-                        svg.setAttribute("id", imgID);
-                        }
+            // Split text using SplitType
+            const contentTitle = new SplitType(".content h1", { types: "chars" });
+            const contentText = new SplitType(".content p", { types: "chars" });
 
-                        if (typeof imgClass !== "undefined") {
-                        svg.setAttribute("class", imgClass + " replaced-svg");
-                        }
+            // Initialize counter animation
+            let currentCount = 0;
+            let targetCount = 0;
+            let lastMessageIndex = 0;
 
-                        svg.removeAttribute("xmlns:a");
-                        if (el.parentNode) {
-                        el.parentNode.replaceChild(svg, el);
-                        }
-                    });
-                });
-                },
-                /** Mobile Menu */
-                mobileMenu() {
-                if ($(".main_menu").offset() != undefined) {
-                    var navoff = $(".main_menu").offset().top;
-                    $(window).scroll(function () {
-                    var scrolling = $(this).scrollTop();
+            // Generate pixel grid
+            function createPixelGrid() {
+                // Generate pixels in rows and columns if needed
+                // For a more minimalist approach, we're using full lines instead
+            }
 
-                    if (scrolling > navoff) {
-                        $(".main_menu").addClass("menu_fix");
-                    } else {
-                        $(".main_menu").removeClass("menu_fix");
-                    }
-                    });
+            // Animation function for progress
+            function animateProgress() {
+                const duration = 6; // Total loading time in seconds
+
+                gsap.to(
+                {},
+                {
+                    duration: duration,
+                    onUpdate: updateProgress,
+                    ease: "power1.inOut"
                 }
-                /** Mobile Menu Button */
-                $(".menu_2_icon").on("click", function () {
-                    $(".menu_2_icon").toggleClass("show_icon");
-                });
-                $(".menu_2_icon").on("click", function () {
-                    $(".main_menu_2").toggleClass("show_menu");
-                });
-                $(".navbar-toggler").on("click", function () {
-                    $(".navbar-toggler").toggleClass("show");
-                });
-                },
-                /** counter */
-                counter() {
-                $(".counter").countUp();
-                },
-                /** Slick Slider */
-                slickSlider() {
-                $(".testi_slider").slick({
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    autoplay: true,
-                    autoplaySpeed: 2000,
-                    dots: false,
-                    arrows: false,
+                );
+            }
 
-                    responsive: [
-                    {
-                        breakpoint: 1200,
-                        settings: {
-                        slidesToShow: 2,
-                        },
-                    },
-                    {
-                        breakpoint: 992,
-                        settings: {
-                        slidesToShow: 1,
-                        },
-                    },
-                    {
-                        breakpoint: 768,
-                        settings: {
-                        slidesToShow: 1,
-                        },
-                    },
-                    {
-                        breakpoint: 576,
-                        settings: {
-                        slidesToShow: 1,
-                        },
-                    },
-                    ],
-                });
-                },
-                /** marquee */
-                marquee() {
-                $(".marquee_animi").marquee({
-                    speed: 100,
-                    gap: 0,
-                    delayBeforeStart: 0,
-                    direction: "left",
-                    duplicated: true,
-                    pauseOnHover: true,
-                    startVisible: true,
-                });
-                },
-                /** Sticky sidebar */
-                stickySideBar() {
-                $("#sticky_sidebar").stickit({
-                    top: 100,
-                });
-                },
-                /** Animation */
-                animation() {
-                /** Fade Left */
-                let fade_left = gsap.utils.toArray(".fade_left");
-                gsap.set(fade_left, {
-                    opacity: 0,
-                    x: -30,
-                });
+            // Update progress function
+            function updateProgress() {
+                // Calculate progress based on timeline progress
+                const progress = Math.floor(this.progress() * 100);
 
-                if (fade_left) {
-                    if (device_width < 1023) {
-                    fade_left.forEach((item, i) => {
-                        gsap.to(item, {
-                        scrollTrigger: {
-                            trigger: item,
-                            start: "top center+=150",
-                            markers: false,
-                        },
-                        opacity: 1,
-                        x: 0,
-                        ease: "power2.out",
-                        duration: 2,
-                        stagger: {
-                            each: 0.4,
-                        },
-                        });
-                    });
-                    } else {
-                    fade_left.forEach((item, i) => {
-                        const containerID = `#${item.getAttribute("data-trigerId")}`;
-                        gsap.to(
-                        `${containerID !== "#null" ? containerID : ""} .fade_left`,
-                        {
-                            scrollTrigger: {
-                            trigger: containerID !== "#null" ? containerID : ".fade_left",
-                            start: "top center+=150",
-                            markers: false,
-                            },
-                            opacity: 1,
-                            x: 0,
-                            ease: "power2.out",
-                            duration: 2,
-                            stagger: {
-                            each: 0.4,
-                            },
-                        }
-                        );
-                    });
-                    }
+                // Update counter target
+                targetCount = progress;
+
+                // Update UI
+                updateCounter();
+                updateProgressBar(progress);
+                updateSystemMessages(progress);
+                updateConnectorLines(progress);
+                updateBlocks(progress);
+                updateGridLines(progress);
+
+                // Handle completion
+                if (progress >= 100) {
+                setTimeout(completeLoading, 800);
                 }
+            }
 
-                /** Fade Right */
-                let fade_right = gsap.utils.toArray(".fade_right");
-                gsap.set(fade_right, {
-                    opacity: 0,
-                    x: +30,
-                });
+            // Update counter with mechanical effect
+            function updateCounter() {
+                if (currentCount !== targetCount) {
+                // Determine step size based on gap
+                const gap = targetCount - currentCount;
+                const step = gap > 10 ? 2 : 1;
 
-                if (fade_right) {
-                    if (device_width < 1023) {
-                    fade_right.forEach((item, i) => {
-                        gsap.to(item, {
-                        scrollTrigger: {
-                            trigger: item,
-                            start: "top center+=150",
-                            markers: false,
-                        },
-                        opacity: 1,
-                        x: 0,
-                        ease: "power2.out",
-                        duration: 2,
-                        stagger: {
-                            each: 0.4,
-                        },
-                        });
-                    });
-                    } else {
-                    fade_right.forEach((item, i) => {
-                        const containerID = `#${item.getAttribute("data-trigerId")}`;
-                        const stagger = item.getAttribute("data-stagger");
-                        gsap.to(`${containerID} .fade_right`, {
-                        scrollTrigger: {
-                            trigger: containerID,
-                            start: "top center+=150",
-                            markers: false,
-                        },
-                        opacity: 1,
-                        x: 0,
-                        ease: "power2.out",
-                        duration: 2,
-                        stagger: {
-                            each: stagger ? stagger : 0.4,
-                        },
-                        });
-                    });
-                    }
+                currentCount =
+                    gap > 0 ? Math.min(targetCount, currentCount + step) : targetCount;
+                counter.textContent = currentCount;
+
+                // If not at target, schedule next update
+                if (currentCount !== targetCount) {
+                    setTimeout(updateCounter, 40);
                 }
+                }
+            }
 
-                /** Fade Bottom */
-                let fade_bottom = gsap.utils.toArray(".fade_bottom");
-                if (device_width < 1023) {
-                    fade_bottom.forEach((item, i) => {
-                    gsap.set(item, { opacity: 0, y: 60 });
-                    let featured2Timeline = gsap.timeline({
-                        scrollTrigger: {
-                        trigger: item,
-                        start: "top center+=200",
-                        },
-                    });
-                    featured2Timeline.to(item, {
-                        opacity: 1,
-                        y: 0,
-                        duration: 1.5,
-                        ease: "power4.out",
-                    });
-                    });
+            // Update progress bar
+            function updateProgressBar(progress) {
+                document.querySelector(".progress").style.width = `${progress}%`;
+
+                // Update marker opacity based on progress
+                markers.forEach((marker) => {
+                const position = parseInt(marker.getAttribute("data-position"));
+                if (progress >= position) {
+                    marker.style.opacity = 1;
                 } else {
-                    fade_bottom.forEach((item, i) => {
-                    const containerID = `#${item.getAttribute("data-trigerId")}`;
-                    const stagger = item.getAttribute("data-stagger");
-                    const duration = item.getAttribute("data-duration");
-                    const defaultValue = item.getAttribute("data-default-value");
-                    console.log(defaultValue);
-                    gsap.set(
-                        `${containerID !== "#null" ? containerID : ""} .fade_bottom`,
-                        {
+                    marker.style.opacity = 0.6;
+                }
+                });
+            }
+
+            // Update connector lines based on progress
+            function updateConnectorLines(progress) {
+                // Scale connector lines based on progress
+                if (progress >= 0) {
+                const scale0to25 = Math.min(1, (progress - 0) / 25);
+                line0to25.style.transform = `scaleX(${scale0to25})`;
+                }
+
+                if (progress >= 25) {
+                const scale25to50 = Math.min(1, (progress - 25) / 25);
+                line25to50.style.transform = `scaleX(${scale25to50})`;
+                }
+
+                if (progress >= 50) {
+                const scale50to75 = Math.min(1, (progress - 50) / 25);
+                line50to75.style.transform = `scaleX(${scale50to75})`;
+                }
+
+                if (progress >= 75) {
+                const scale75to100 = Math.min(1, (progress - 75) / 25);
+                line75to100.style.transform = `scaleX(${scale75to100})`;
+                }
+            }
+
+            // Update system messages based on progress
+            function updateSystemMessages(progress) {
+                let activeIndex = Math.min(4, Math.floor(progress / 20));
+
+                // Only update if changed
+                if (activeIndex !== lastMessageIndex) {
+                // Hide all messages
+                messages.forEach((message) => {
+                    message.classList.remove("active");
+                });
+
+                // Show current message
+                messages[activeIndex].classList.add("active");
+
+                // Simulate terminal printing effect
+                if (activeIndex < messages.length) {
+                    simulateTyping(messages[activeIndex]);
+                }
+
+                lastMessageIndex = activeIndex;
+                }
+            }
+
+            // Update blocks based on progress
+            function updateBlocks(progress) {
+                // Scale blocks based on progress thresholds
+                if (progress >= 20) {
+                blocks[0].style.transform = `scale(${Math.min(1, (progress - 20) / 20)})`;
+                }
+
+                if (progress >= 40) {
+                blocks[1].style.transform = `scale(${Math.min(1, (progress - 40) / 20)})`;
+                }
+
+                if (progress >= 60) {
+                blocks[2].style.transform = `scale(${Math.min(1, (progress - 60) / 20)})`;
+                }
+
+                if (progress >= 80) {
+                blocks[3].style.transform = `scale(${Math.min(1, (progress - 80) / 20)})`;
+                }
+            }
+
+            // Update grid lines based on progress
+            function updateGridLines(progress) {
+                // Extend lines based on progress
+                topRow.style.width = `${progress}%`;
+                bottomRow.style.width = `${progress}%`;
+                leftColumn.style.height = `${progress}%`;
+                rightColumn.style.height = `${progress}%`;
+            }
+
+            // Simulate typing effect for terminal-like messages
+            function simulateTyping(element) {
+                const text = element.textContent;
+                element.textContent = "";
+                element.style.display = "block";
+
+                let i = 0;
+                const typeNextChar = () => {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeNextChar, 30);
+                }
+                };
+
+                typeNextChar();
+            }
+
+            // Complete loading animation
+            function completeLoading() {
+                // Create minimal transition effect
+                const completionTl = gsap.timeline();
+
+                completionTl
+                // Slide away loader with clean transition
+                .to(".preloader", {
+                    y: "-100%",
+                    duration: 1,
+                    ease: "power2.inOut"
+                })
+                // Show content
+                .set(".content", {
+                    visibility: "visible"
+                })
+                .to(".content", {
+                    opacity: 1,
+                    duration: 0.8,
+                    ease: "power2.out"
+                })
+                // Clean reveal of content
+                .to([contentTitle.chars, contentText.chars], {
+                    opacity: 1,
+                    y: 0,
+                    stagger: 0.02,
+                    duration: 0.4,
+                    ease: "power1.out",
+                    onStart: () => {
+                    // Initially position all chars up
+                    gsap.set([contentTitle.chars, contentText.chars], {
                         opacity: 0,
-                        y: defaultValue ? defaultValue : 30,
-                        }
-                    );
-                    gsap.to(
-                        `${containerID !== "#null" ? containerID : ""} .fade_bottom`,
-                        {
-                        scrollTrigger: {
-                            trigger: containerID !== "#null" ? containerID : ".fade_bottom",
-                            start: "top center+=200",
-                        },
-                        opacity: 1,
-                        y: 0,
-                        duration: duration ? duration : 2,
-                        ease: "power4.out",
-                        stagger: stagger ? stagger : 0.3,
-                        }
-                    );
-                    });
-                }
-                },
-                /** Text animation */
-                textAnimation() {
-                if (device_width > 767) {
-                    var hasAnim = $(".text_hover_animaiton");
-                    if (hasAnim.length !== 0) {
-                    hasAnim.each(function () {
-                        var $this = $(this);
-                        var splitType = "words,chars";
-                        new SplitText($this, {
-                        type: splitType,
-                        wordsClass: "menu-text",
-                        });
+                        y: 30
                     });
                     }
-                }
-                },
-                headingAnimation() {
-                var hasAnim = $(".has-animation");
-                if (device_width > 767) {
-                    hasAnim.each(function () {
-                    var $this = $(this);
-                    var splitType = "lines, chars";
-                    var splitto = new SplitText($this, {
-                        type: splitType,
-                        linesClass: "anim_line",
-                        charsClass: "anim_char",
-                        wordsClass: "anim_word",
-                    });
-                    var lines = $this.find(".anim_line"),
-                        words = $this.find(".anim_word"),
-                        chars = $this.find(".anim_char");
-                    gsap.fromTo(
-                        chars,
-                        { y: "100%" },
-                        {
-                        y: "0%",
-                        duration: 0.8,
-                        stagger: 0.01,
-                        ease: "power2.out",
-                        scrollTrigger: {
-                            trigger: $(this).parent("div"),
-                            start: "top center+=300",
-                            toggleActions: "play none none none",
-                        },
-                        }
-                    );
-                    });
-                }
-                },
-                progressbar() {
-                var progressbar = $(".tf__team_skills_bar_single .fill");
-                progressbar.each(function () {
-                    const percentage = progressbar.attr("data-percentage");
-                    gsap.fromTo(
-                    progressbar,
-                    { css: { width: 0 } },
-                    {
-                        scrollTrigger: {
-                        trigger: $(this).parent("div"),
-                        start: "top center+=300",
-                        toggleActions: "play none none none",
-                        },
-                        css: { width: `${percentage}%` },
-                        duration: 0.8,
-                        stagger: 0.01,
-                        ease: "power2.out",
-                    }
-                    );
+                })
+                // Hide preloader
+                .set(".preloader", {
+                    display: "none"
                 });
-                },
-                /** parallaxie */
-                parallaxie() {
-                $(".tf__subscribe").parallaxie({
-                    speed: 0.8,
-                    size: "cover",
-                });
-                },
-                /** Preloader */
-                preloader() {
-                const svg = document.getElementById("svg");
-                const tl = gsap.timeline();
-                const curve = "M0 502S175 272 500 272s500 230 500 230V0H0Z";
-                const flat = "M0 2S175 1 500 1s500 1 500 1V0H0Z";
+            }
 
-                tl.to(".preloader-text", {
-                    delay: 0.5,
-                    y: -100,
-                    opacity: 0,
-                });
-                tl.to(svg, {
-                    duration: 0.1,
-                    // attr: { d: curve },
-                    ease: "power2.easeIn",
-                }).to(svg, {
-                    duration: 0.5,
-                    attr: { d: flat },
-                    ease: "power2.easeOut",
-                });
-                tl.to(".preloader", {
-                    y: -1500,
-                });
-                tl.to(".preloader", {
-                    zIndex: -1,
-                    display: "none",
-                });
-                },
-                /** Mouse */
-                customMouse() {
-                var mouse = { x: 0, y: 0 }; // Cursor position
-                var pos = { x: 0, y: 0 }; // Cursor position
-                var ratio = 0.15; // delay follow cursor
-                var active = false;
-                var ball = $("#ball");
+            // Add pixel animation for progress indication
+            function animatePixels() {
+                // For minimalist approach, we're using grid lines instead
+                // This function is kept for potential future enhancements
+            }
 
-                /** default */
-                const defaultValue = {
-                    duration: 0.3,
-                    opacity: 0.5,
-                    width: "30px",
-                    height: "30px",
-                    backgroundColor: "transparent",
-                    border: "2px solid #fff",
-                };
-                const hoverBall = {
-                    duration: 0.3,
-                    css: {
-                    borderWidth: 0,
-                    opacity: "1!important",
-                    width: "95px!important",
-                    height: "95px!important",
-                    backgroundColor: "#fff",
-                    },
-                };
-                gsap.set(ball, {
-                    // scale from middle and style ball
-                    xPercent: -50,
-                    yPercent: -50,
-                });
-                document.addEventListener("mousemove", mouseMove);
-                function mouseMove(e) {
-                    mouse.x = e.clientX;
-                    mouse.y = e.clientY;
-                }
-                gsap.ticker.add(updatePosition);
-                function updatePosition() {
-                    if (!active) {
-                    pos.x += (mouse.x - pos.x) * ratio;
-                    pos.y += (mouse.y - pos.y) * ratio;
+            // Generate random digits for counter
+            function randomDigits() {
+                return Math.floor(Math.random() * 100);
+            }
 
-                    gsap.set(ball, { x: pos.x, y: pos.y });
-                    }
-                }
-                // link
-                $("a,.c-pointer,button,.progress")
-                    .not(".project_slider a") // omit from selection.
-                    .on("mouseenter", function () {
-                    gsap.to(ball, {
-                        duration: 0.3,
-                        borderWidth: 0,
-                        opacity: 0.5,
-                        backgroundColor: "#CCC",
-                        width: "80px",
-                        height: "80px",
-                    });
-                    })
-                    .on("mouseleave", function () {
-                    gsap.to(ball, defaultValue);
-                    });
-                // Data cursor
-                if ($("[data-cursor]")) {
-                    $("[data-cursor]").each(function () {
-                    $(this)
-                        .on("mouseenter", function () {
-                        ball.append('<div class="ball-view"></div>');
-                        $(".ball-view").append($(this).attr("data-cursor"));
-                        gsap.to(ball, hoverBall);
-                        })
-                        .on("mouseleave", function () {
-                        ball.find(".ball-view").remove();
-                        gsap.to(ball, defaultValue);
-                        });
-                    });
-                }
-                // Slider
-                if ($(".slick-list")) {
-                    $(".slick-list").each(function () {
-                    $(this)
-                        .on("mouseenter", function () {
-                        ball.append(
-                            '<div class="ball-drag"><i class="far fa-angle-left"></i><i class="far fa-angle-right"></i></div>'
-                        );
-                        // $(".ball-drag").append("read more");
-                        gsap.to(ball, hoverBall);
-                        })
-                        .on("mouseleave", function () {
-                        ball.find(".ball-drag").remove();
-                        gsap.to(ball, defaultValue);
-                        });
-                    });
-                }
-                // Gallery
-                if ($(".gallery")) {
-                    $(".gallery").each(function () {
-                    $(this)
-                        .on("mouseenter", function () {
-                        ball.append(
-                            '<div class="ball-gallery"><i class="fa-sharp fa-solid fa-eye"></i></div>'
-                        );
-                        // $(".ball-drag").append("read more");
-                        gsap.to(ball, hoverBall);
-                        })
-                        .on("mouseleave", function () {
-                        ball.find(".ball-gallery").remove();
-                        gsap.to(ball, defaultValue);
-                        });
-                    });
-                }
-                },
-                magnificPopup() {
-                $(".play_btn").each(function () {
-                    $(this).magnificPopup({
-                    type: "iframe",
-                    mainClass: "mfp-fade",
-                    preloader: false,
-                    fixedContentPos: true,
-                    });
-                });
-                $(".image_popup,.gallery_popup a").magnificPopup({
-                    type: "image",
-                    gallery: {
-                    enabled: true,
-                    },
-                    mainClass: "mfp-fade",
-                });
-                $(".details").magnificPopup({
-                    type: "inline",
-                    overflowY: "auto",
-                    closeBtnInside: true,
-                    mainClass: "mfp-fade zyan-popup",
-                });
-                },
-                serviceHover() {
-                const services = document.querySelectorAll(".tf__single_service_2");
-                services.forEach((service) => {
-                    service.addEventListener("mouseenter", () => {
-                    document
-                        .querySelector(".tf__single_service_2.active")
-                        .classList.remove("active");
-                    service.classList.add("active");
-                    });
-                });
-                },
-            };
-            $(document).ready(function () {
-                zyan.init();
-                zyan.preloader();
+            // Start animations
+            animateProgress();
+
+            // Handle window resize
+            window.addEventListener("resize", () => {
+                // Recalculate layout if needed
             });
-            })(jQuery);
+            });
 
         </script>
+        
     </body>
 </html>
