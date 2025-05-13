@@ -487,7 +487,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 // <!-- ======= MAGIC-CURSOR START ======= -->
 const rings = document.querySelectorAll('.ring');
 const cursor = document.getElementById('cursor');
-const links = document.querySelectorAll('a');
+const links = document.querySelectorAll('a, button');
 
 window.addEventListener('mousemove', (e) => {
     rings.forEach(ring => {
