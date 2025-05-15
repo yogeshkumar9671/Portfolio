@@ -18,20 +18,36 @@
         <link rel="stylesheet" href="style.css">
 
         <style>
+            .letter-animate{
+                display: block;
+                overflow: hidden;
+                visibility: hidden; /* Initially hide the entire heading */
+            }
+            .word {
+                display: inline-block;
+                white-space: nowrap;
+                overflow: hidden;
+            }
+            .letter-animate .letter {
+                display: inline-block;
+                opacity: 0;
+                transform: translateY(20px);
+                animation: riseLetter 0.05s forwards;
+                animation-timing-function: ease-out;
+            }
             /* Basic rise-up for h5 */
             .rise-up {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease-out;
+                opacity: 0;
+                transform: translateY(20px);
+                transition: all 3s ease-out;
             }
 
             .rise-up.visible {
-            opacity: 1;
-            transform: translateY(0);
+                opacity: 1;
+                transform: translateY(0);
             }
-            .letter-animate{
-                display: inline-block;
-                overflow: hidden;
+            .letter-animate.visible {
+                visibility: visible; /* Show only when animation is triggered */
             }
 
             /* Letter-by-letter animation */
@@ -39,17 +55,18 @@
                 display: inline-block;
                 opacity: 0;
                 transform: translateY(20px);
-                animation: riseLetter 0.2s forwards;
+                animation: riseLetter 0.05s forwards;
                 color: inherit;
                 font-size: inherit;
                 animation-timing-function: ease-out;
+                opacity: 1;
             }
 
             @keyframes riseLetter {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
             }
         </style>
     </head>
@@ -1752,7 +1769,7 @@
         <script src="https://unpkg.com/split-type"></script>
         <script src="script.js"></script>
 
-        <script>
+        <!-- <script>
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1780,6 +1797,98 @@
             }, { threshold: 0.5 });
 
             document.querySelectorAll('.has-animation').forEach(el => observer.observe(el));
+        </script> -->
+        <script>
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+
+                    if (entry.target.classList.contains('letter-animate')) {
+                        const rawText = entry.target.textContent.trim().replace(/\s+/g, ' ');
+                        const words = rawText.split(' ');
+                        entry.target.innerHTML = '';
+
+                        let letterIndex = 0; // Start from 0 and count through all letters
+
+                        words.forEach((word, wordIndex) => {
+                        const wordSpan = document.createElement('span');
+                        wordSpan.className = 'word';
+                        wordSpan.style.whiteSpace = 'nowrap';
+
+                        [...word].forEach((char) => {
+                            const span = document.createElement('span');
+                            span.className = 'letter';
+                            span.textContent = char;
+                            span.style.animationDelay = `${letterIndex * 0.05}s`;
+                            span.style.display = 'inline-block';
+                            wordSpan.appendChild(span);
+                            letterIndex++; // Increase for each letter
+                        });
+
+                        entry.target.appendChild(wordSpan);
+
+                        // Add space between words
+                        if (wordIndex < words.length - 1) {
+                            entry.target.appendChild(document.createTextNode('\u00A0'));
+                            letterIndex++; // Count the space as a delay step
+                        }
+                        });
+                    }
+
+                    observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            document.querySelectorAll('.has-animation').forEach(el => observer.observe(el));
+
         </script>
+        <!-- <script>
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                    if (entry.target.classList.contains('letter-animate')) {
+                        const rawText = entry.target.textContent.trim().replace(/\s+/g, ' ');
+                        const words = rawText.split(' ');
+                        entry.target.innerHTML = '';
+
+                        let letterIndex = 0;
+
+                        words.forEach((word, wordIndex) => {
+                        const wordSpan = document.createElement('span');
+                        wordSpan.className = 'word';
+                        wordSpan.style.whiteSpace = 'nowrap';
+
+                        [...word].forEach((char) => {
+                            const span = document.createElement('span');
+                            span.className = 'letter';
+                            span.textContent = char;
+                            span.style.animationDelay = `${letterIndex * 0.05}s`;
+                            span.style.display = 'inline-block';
+                            wordSpan.appendChild(span);
+                            letterIndex++;
+                        });
+
+                        entry.target.appendChild(wordSpan);
+
+                        if (wordIndex < words.length - 1) {
+                            entry.target.appendChild(document.createTextNode('\u00A0'));
+                            letterIndex++;
+                        }
+                        });
+                    }
+
+                    // Now make it visible and start animation
+                    entry.target.classList.add('visible');
+
+                    observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            document.querySelectorAll('.has-animation').forEach(el => observer.observe(el));
+
+        </script> -->
     </body>
 </html>

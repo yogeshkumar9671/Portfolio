@@ -287,7 +287,7 @@
     }
 
     .loading-bar-container {
-        bottom: 3rem;
+        bottom: 1rem;
         left: 1rem;
         right: 1rem;
     }
@@ -1013,7 +1013,7 @@ li {
 }
 
 @media screen and (max-width: 1399.99px) {
-    .tf_section_heading h2 {
+    .tf_section_heading h2 span {
         font-size: 38px;
         line-height: 60px;
     }
@@ -1161,7 +1161,7 @@ section#service {
     position: relative;
 }
 
-.tf_section_heading h2 {
+.tf_section_heading h2 span {
     text-align: center;
     font-size: 50px;
     font-weight: 600;
@@ -1270,7 +1270,7 @@ span {
 }
 
 @media (max-width: 575.99px) {
-    .tf_section_heading h2 {
+    .tf_section_heading h2 span {
         font-size: 36px;
         line-height: 45px;
     }
@@ -1321,7 +1321,7 @@ span {
     color: GREEN;
 }
 
-.tf__section_heading h2 {
+.tf__section_heading h2 span {
     text-align: center;
     font-size: 50px;
     font-weight: 600;
@@ -1591,7 +1591,7 @@ section#skills {
 }
 
 @media (min-width: 992px) and (max-width: 1199.99px) {
-    .tf__section_heading h2 {
+    .tf__section_heading h2 span {
         font-size: 38px;
         line-height: 60px;
     }
@@ -1639,7 +1639,7 @@ section#skills {
 }
 
 @media (min-width: 1200px) and (max-width: 1399.99px) {
-    .tf__section_heading h2 {
+    .tf__section_heading h2 span {
         font-size: 38px;
         line-height: 60px;
     }
@@ -1653,7 +1653,7 @@ section#skills {
 }
 
 @media (min-width: 576px) and (max-width: 767.99px) {
-    .tf__section_heading h2 {
+    .tf__section_heading h2 span {
         font-size: 36px;
         line-height: 45px;
     }
@@ -1672,7 +1672,7 @@ section#skills {
 }
 
 @media (max-width: 575.99px) {
-    .tf__section_heading h2 {
+    .tf__section_heading h2 span {
         font-size: 36px;
         line-height: 45px;
     }
