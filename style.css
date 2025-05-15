@@ -2165,6 +2165,12 @@ select {
 /* <!-- ======= PROGRESS BUTTON START ======= --> */
 /* <!-- ======= PROGRESS BUTTON START ======= --> */
 /* <!-- ======= PROGRESS BUTTON START ======= --> */
+#blog, 
+#contact,
+#skills,
+#service{
+    text-align: center;
+}
 .content {
     width: 500px;
     padding: 100px 0;
@@ -2337,10 +2343,6 @@ select {
     section#portfolio {
         padding-left: 10px!important;
         padding-right: 10px!important;
-    }
-    
-    {
-        padding: 0 0px;
     }
 }
 /* <!-- X====== MEGIC CURSOR -END- ======X --> */
