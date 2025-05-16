@@ -41,7 +41,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Animation function for progress
     function animateProgress() {
-        const duration = 5; // Total loading time in seconds
+        // const duration = 5; // Total loading time in seconds
+        const duration = 3; // Total loading time in seconds
 
         gsap.to(
             {},
@@ -55,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Update progress function
     function updateProgress() {
-        
+
 
         // Update counter target
         // targetCount = progress;
@@ -506,3 +507,108 @@ links.forEach(link => {
 // <!-- ======= MAGIC-CURSOR -END- ======= -->
 // <!-- ======= MAGIC-CURSOR -END- ======= -->
 // <!-- ======= MAGIC-CURSOR -END- ======= -->
+
+
+
+
+
+
+// <!-- ======= SECTION-CONTAINER-ANIMATION -END- ======= -->
+// <!-- ======= SECTION-CONTAINER-ANIMATION -END- ======= -->
+// <!-- ======= SECTION-CONTAINER-ANIMATION -END- ======= -->
+document.addEventListener("DOMContentLoaded", function () {
+    // Define all animation groups and their corresponding box classes
+    const animationGroups = [
+        { containerClass: '.contact-animation', boxClass: '.contact-animation-box' },
+        { containerClass: '.service-animation', boxClass: '.service-animation-box' },
+        { containerClass: '.blog-animation', boxClass: '.blog-animation-box' },
+        { containerClass: '.skills-animation', boxClass: '.skills-animation-box' },
+        { containerClass: '.about-animation', boxClass: '.about-animation-box' },
+        { containerClass: '.portfolio-animation', boxClass: '.portfolio-animation-box' }
+    ];
+
+    const observerOptions = {
+        threshold: 0.3
+    };
+
+    animationGroups.forEach(group => {
+        const container = document.querySelector(group.containerClass);
+        if (!container) return;
+
+        const boxes = container.querySelectorAll(group.boxClass);
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    boxes.forEach((box, index) => {
+                        setTimeout(() => {
+                            box.classList.add("visible");
+                        }, index * 500); // 0.5s delay between each box
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        observer.observe(container);
+    });
+});
+// <!-- ======= HSECTION-CONTAINER-ANIMATION START ======= -->
+// <!-- ======= HSECTION-CONTAINER-ANIMATION START ======= -->
+// <!-- ======= HSECTION-CONTAINER-ANIMATION START ======= -->
+
+
+
+
+
+
+
+// <!-- ======= H2-H5-HEADING START ======= -->
+// <!-- ======= H2-H5-HEADING START ======= -->
+// <!-- ======= H2-H5-HEADING START ======= -->
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+
+            if (entry.target.classList.contains('letter-animate')) {
+                const rawText = entry.target.textContent.trim().replace(/\s+/g, ' ');
+                const words = rawText.split(' ');
+                entry.target.innerHTML = '';
+
+                let letterIndex = 0; // Start from 0 and count through all letters
+
+                words.forEach((word, wordIndex) => {
+                    const wordSpan = document.createElement('span');
+                    wordSpan.className = 'word';
+                    wordSpan.style.whiteSpace = 'nowrap';
+
+                    [...word].forEach((char) => {
+                        const span = document.createElement('span');
+                        span.className = 'letter';
+                        span.textContent = char;
+                        span.style.animationDelay = `${letterIndex * 0.05}s`;
+                        span.style.display = 'inline-block';
+                        wordSpan.appendChild(span);
+                        letterIndex++; // Increase for each letter
+                    });
+
+                    entry.target.appendChild(wordSpan);
+
+                    // Add space between words
+                    if (wordIndex < words.length - 1) {
+                        entry.target.appendChild(document.createTextNode('\u00A0'));
+                        letterIndex++; // Count the space as a delay step
+                    }
+                });
+            }
+
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('.has-animation').forEach(el => observer.observe(el));
+// <!-- ======= H2-H5-HEADING -END- ======= -->
+// <!-- ======= H2-H5-HEADING -END- ======= -->
+// <!-- ======= H2-H5-HEADING -END- ======= -->

@@ -16,59 +16,6 @@
             integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
             crossorigin="anonymous">
         <link rel="stylesheet" href="style.css">
-
-        <style>
-            .letter-animate{
-                display: block;
-                overflow: hidden;
-                visibility: hidden; /* Initially hide the entire heading */
-            }
-            .word {
-                display: inline-block;
-                white-space: nowrap;
-                overflow: hidden;
-            }
-            .letter-animate .letter {
-                display: inline-block;
-                opacity: 0;
-                transform: translateY(20px);
-                animation: riseLetter 0.01s forwards;
-                animation-timing-function: ease-out;
-            }
-            /* Basic rise-up for h5 */
-            .rise-up {
-                opacity: 0;
-                transform: translateY(20px);
-                transition: all 1s ease-out;
-            }
-
-            .rise-up.visible {
-                opacity: 1;
-                transform: translateY(0);
-            }
-            .letter-animate.visible {
-                visibility: visible; /* Show only when animation is triggered */
-            }
-
-            /* Letter-by-letter animation */
-            .letter-animate span {
-                display: inline-block;
-                opacity: 0;
-                transform: translateY(20px);
-                animation: riseLetter 0.01s forwards;
-                color: inherit;
-                font-size: inherit;
-                animation-timing-function: ease-out;
-                opacity: 1;
-            }
-
-            @keyframes riseLetter {
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-        </style>
     </head>
     <body class="home_2">
         <!--=======================================================================
@@ -452,7 +399,7 @@
                                         ME</h5>
                                     <h2 class="has-animation letter-animate"
                                         style>Crafting
-                                        stories through             design and
+                                        stories through design and
                                         innovation</h2>
                                 </div>
                             </div>
@@ -460,8 +407,8 @@
                         <div class="row justify-content-between">
                             <div class="col-xl-6 col-lg-6">
                                 <div class="tf_about_text">
-                                    <ul>
-                                        <li>
+                                    <ul class="about-animation">
+                                        <li class="about-animation-box">
                                             <div class="top fade_bottom"
                                                 data-trigerid="about"
                                                 style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
@@ -487,7 +434,7 @@
                                                 </div>
                                             </div>
                                         </li>
-                                        <li>
+                                        <li class="about-animation-box">
                                             <div class="top fade_bottom"
                                                 data-trigerid="about"
                                                 style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
@@ -559,8 +506,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-xl-4 col-md-6 col-lg-4">
+                        <div class="row service-animation">
+                            <div class="col-xl-4 col-md-6 col-lg-4 service-animation-box">
                                 <div class="tf_single_service fade_left"
                                     data-trigerid="service"
                                     style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
@@ -610,7 +557,7 @@
                                     <a href="#">Read More</a>
                                 </div>
                             </div>
-                            <div class="col-xl-4 col-md-6 col-lg-4">
+                            <div class="col-xl-4 col-md-6 col-lg-4 service-animation-box">
                                 <div class="tf_single_service fade_left active"
                                     data-trigerid="service"
                                     style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
@@ -681,7 +628,7 @@
                                     <a href="#">Read More</a>
                                 </div>
                             </div>
-                            <div class="col-xl-4 col-md-6 col-lg-4">
+                            <div class="col-xl-4 col-md-6 col-lg-4 service-animation-box">
                                 <div class="tf_single_service fade_left"
                                     data-trigerid="service"
                                     style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
@@ -737,7 +684,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-xl-9 col-lg-9 m-auto">
-                                <div class="tf__section_heading mb_30">
+                                <div class="tf_section_heading mb_30">
                                     <h5 class="has-animation rise-up" style>MY
                                         SKILLS</h5>
                                     <h2 class="has-animation letter-animate"
@@ -807,8 +754,8 @@
                                         id="pills-home" role="tabpanel"
                                         aria-labelledby="pills-home-tab"
                                         tabindex="0">
-                                        <div class="row">
-                                            <div class="col-xl-6 col-lg-6">
+                                        <div class="row skills-animation">
+                                            <div class="col-xl-6 col-lg-6 skills-animation-box">
                                                 <div
                                                     class="tf__single_skill_2 fade_bottom"
                                                     data-trigerid="skills"
@@ -844,7 +791,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-xl-6 col-lg-6">
+                                            <div class="col-xl-6 col-lg-6 skills-animation-box">
                                                 <div
                                                     class="tf__single_skill_2 fade_bottom"
                                                     data-trigerid="skills"
@@ -880,7 +827,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-xl-6 col-lg-6">
+                                            <div class="col-xl-6 col-lg-6 skills-animation-box">
                                                 <div
                                                     class="tf__single_skill_2 fade_bottom"
                                                     data-trigerid="skills"
@@ -916,7 +863,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-xl-6 col-lg-6">
+                                            <div class="col-xl-6 col-lg-6 skills-animation-box">
                                                 <div
                                                     class="tf__single_skill_2 fade_bottom"
                                                     data-trigerid="skills"
@@ -1245,7 +1192,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-xl-10 col-lg-9 mb_30">
-                                <div class="tf__section_heading">
+                                <div class="tf_section_heading">
                                     <h5 class="has-animation rise-up" style>my
                                         recent
                                         Portfolio</h5>
@@ -1256,8 +1203,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-xl-6 col-sm-6">
+                        <div class="row portfolio-animation">
+                            <div class="col-xl-6 col-sm-6 portfolio-animation-box">
                                 <a
                                     href="https://www.youtube.com/watch?v=B-ytMSuwbf8"
                                     class="tf__portfolio_item play_btn"
@@ -1271,7 +1218,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-xl-6 col-sm-6">
+                            <div class="col-xl-6 col-sm-6 portfolio-animation-box">
                                 <a class="tf__portfolio_item play_btn"
                                     href="https://vimeo.com/132528823"
                                     data-cursor="Watch <br> video">
@@ -1284,7 +1231,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-xl-4 col-sm-6">
+                            <div class="col-xl-4 col-sm-6 portfolio-animation-box">
                                 <a
                                     href="https://w.soundcloud.com/player/?visual=true&amp;url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F159967086&amp;show_artwork=true&amp;maxwidth=1020&amp;maxheight=1000&amp;auto_play=1"
                                     class="tf__portfolio_item play_btn"
@@ -1298,7 +1245,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-xl-4 col-sm-6">
+                            <div class="col-xl-4 col-sm-6 portfolio-animation-box">
                                 <a
                                     href="https://zyan.vercel.app/images/portfolio/8.png"
                                     class="tf__portfolio_item image_popup"
@@ -1312,7 +1259,7 @@
                                     </div>
                                 </a>
                             </div>
-                            <div class="col-xl-4 col-sm-6">
+                            <div class="col-xl-4 col-sm-6 portfolio-animation-box">
                                 <a href="#details-popup"
                                     class="tf__portfolio_item details"
                                     data-cursor="Details <br> View">
@@ -1391,7 +1338,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-xl-8 m-auto mb_30">
-                                <div class="tf__section_heading">
+                                <div class="tf_section_heading">
                                     <h5 class="has-animation rise-up" style>all
                                         blog</h5>
                                     <h2 class="has-animation letter-animate"
@@ -1401,8 +1348,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row animation">
-                            <div class="col-xl-4 col-md-6">
+                        <div class="row blog-animation">
+                            <div class="col-xl-4 col-md-6 blog-animation-box">
                                 <div class="tf__slingle_blog_2 fade_left"
                                     data-trigerid="blog"
                                     style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
@@ -1442,7 +1389,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-4 col-md-6">
+                            <div class="col-xl-4 col-md-6 blog-animation-box">
                                 <div class="tf__slingle_blog_2 fade_left"
                                     data-trigerid="blog"
                                     style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
@@ -1482,7 +1429,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-4 col-md-6">
+                            <div class="col-xl-4 col-md-6 blog-animation-box">
                                 <div class="tf__slingle_blog_2 fade_left"
                                     data-trigerid="blog"
                                     style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
@@ -1536,7 +1483,7 @@
                     <div class="container mb-2">
                         <div class="row">
                             <div class="col-xl-8 m-auto mb_30">
-                                <div class="tf__section_heading">
+                                <div class="tf_section_heading">
                                     <h5 class="has-animation rise-up"
                                         style>CONTACT</h5>
                                     <h2 class="has-animation letter-animate"
@@ -1546,8 +1493,8 @@
                         </div>
                     </div>
                     <div class="container">
-                        <div class="row animation">
-                            <div class="col-xl-4 col-md-6 col-lg-4">
+                        <div class="row contact-animation">
+                            <div class="col-xl-4 col-md-6 col-lg-4 contact-animation-box">
                                 <div class="tf__contact_2_text fade_left"
                                     data-trigerid="contact"
                                     style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
@@ -1606,7 +1553,7 @@
                                         href="callto:12345664746846">123-45664-746846</a>
                                 </div>
                             </div>
-                            <div class="col-xl-4 col-md-6 col-lg-4">
+                            <div class="col-xl-4 col-md-6 col-lg-4 contact-animation-box">
                                 <div class="tf__contact_2_text fade_left"
                                     data-trigerid="contact"
                                     style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
@@ -1645,7 +1592,7 @@
                                     <a href="#">View on map</a>
                                 </div>
                             </div>
-                            <div class="col-xl-4 col-md-6 col-lg-4">
+                            <div class="col-xl-4 col-md-6 col-lg-4 contact-animation-box">
                                 <div class="tf__contact_2_text fade_left"
                                     data-trigerid="contact"
                                     style="translate: none; rotate: none; scale: none; transform: translate(0px, 0px); opacity: 1;">
@@ -1768,53 +1715,5 @@
             src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
         <script src="https://unpkg.com/split-type"></script>
         <script src="script.js"></script>
-
-
-        <script>
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-
-                    if (entry.target.classList.contains('letter-animate')) {
-                        const rawText = entry.target.textContent.trim().replace(/\s+/g, ' ');
-                        const words = rawText.split(' ');
-                        entry.target.innerHTML = '';
-
-                        let letterIndex = 0; // Start from 0 and count through all letters
-
-                        words.forEach((word, wordIndex) => {
-                        const wordSpan = document.createElement('span');
-                        wordSpan.className = 'word';
-                        wordSpan.style.whiteSpace = 'nowrap';
-
-                        [...word].forEach((char) => {
-                            const span = document.createElement('span');
-                            span.className = 'letter';
-                            span.textContent = char;
-                            span.style.animationDelay = `${letterIndex * 0.05}s`;
-                            span.style.display = 'inline-block';
-                            wordSpan.appendChild(span);
-                            letterIndex++; // Increase for each letter
-                        });
-
-                        entry.target.appendChild(wordSpan);
-
-                        // Add space between words
-                        if (wordIndex < words.length - 1) {
-                            entry.target.appendChild(document.createTextNode('\u00A0'));
-                            letterIndex++; // Count the space as a delay step
-                        }
-                        });
-                    }
-
-                    observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.5 });
-
-            document.querySelectorAll('.has-animation').forEach(el => observer.observe(el));
-
-        </script>
     </body>
 </html>
