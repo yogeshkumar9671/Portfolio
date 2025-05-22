@@ -652,3 +652,24 @@ form.addEventListener("submit", handleSubmit)
 // <!-- ======= CONTACT-FORM -END- ======= -->
 // <!-- ======= CONTACT-FORM -END- ======= -->
 // <!-- ======= CONTACT-FORM -END- ======= -->
+
+
+
+
+
+// <!-- ======= WHATSAPP-CONTACT START ======= -->
+// <!-- ======= WHATSAPP-CONTACT START ======= -->
+// <!-- ======= WHATSAPP-CONTACT START ======= -->
+document.addEventListener('DOMContentLoaded', function () {
+    var link = document.querySelector('.whatsapp a');
+    var isMobile = /iPhone|Android|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        link.href = "https://wa.me/919671491680";
+    } else {
+        link.href = "https://web.whatsapp.com/send?phone=919671491680";
+    }
+});
+// <!-- ======= WHATSAPP-CONTACT -END- ======= -->
+// <!-- ======= WHATSAPP-CONTACT -END- ======= -->
+// <!-- ======= WHATSAPP-CONTACT -END- ======= -->
