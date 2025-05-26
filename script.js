@@ -661,13 +661,28 @@ form.addEventListener("submit", handleSubmit)
 // <!-- ======= WHATSAPP-CONTACT START ======= -->
 // <!-- ======= WHATSAPP-CONTACT START ======= -->
 document.addEventListener('DOMContentLoaded', function () {
-    var link = document.querySelector('.whatsapp a');
+    var link = document.getElementById('whatsapp-link');
+    var phone = "919671491680";
     var isMobile = /iPhone|Android|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
     if (isMobile) {
-        link.href = "https://wa.me/919671491680";
+        // Mobile: open WhatsApp app or wa.me fallback
+        link.href = "https://wa.me/" + phone;
     } else {
-        link.href = "https://web.whatsapp.com/send?phone=919671491680";
+        // Desktop: on click, try whatsapp://, fallback to web.whatsapp.com
+        link.href = "#";+
+
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            // Try to open WhatsApp Desktop app
+            window.location.href = "whatsapp://send?phone=" + phone;
+
+            // After 1.5 seconds, fallback to WhatsApp Web
+            setTimeout(function () {
+                window.open("https://web.whatsapp.com/send?phone=" + phone, "_blank");
+            }, 1500);
+        });
     }
 });
 // <!-- ======= WHATSAPP-CONTACT -END- ======= -->
