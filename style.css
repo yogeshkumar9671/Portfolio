@@ -334,7 +334,7 @@ body {
     overflow-x: hidden;
     scroll-behavior: smooth;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 1.7;
     word-break: break-word;
     background: #02050a;
@@ -651,7 +651,7 @@ li {
 p,
 span {
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 1.7;
     color: #a2a2a2;
 }
@@ -1210,7 +1210,7 @@ section#service {
 p,
 span {
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 1.7;
     margin: 0;
     color: #a2a2a2;
