@@ -401,15 +401,15 @@ document.addEventListener("DOMContentLoaded", function () {
 let tabButtons = [
     document.querySelector("#pills-home-tab"),
     document.querySelector("#pills-profile-tab"),
-    document.querySelector("#pills-contact-tab"),
+    //document.querySelector("#pills-contact-tab"),
     document.querySelector("#pills-disabled-tab")
 ];
 
 let tabContents = [
     document.querySelector("#pills-home"),
     document.querySelector("#pills-profile"),
-    document.querySelector("#pills-contact"),
-    document.querySelector("#pills-disabled")
+    //document.querySelector("#pills-contact"),
+    //document.querySelector("#pills-disabled")
 ];
 
 function activateTab(activeTab, allTabs, activeBtn, allBtns) {
@@ -423,8 +423,8 @@ function activateTab(activeTab, allTabs, activeBtn, allBtns) {
 // Event listeners for buttons
 tabButtons[0].onclick = () => activateTab(tabContents[0], tabContents, tabButtons[0], tabButtons);
 tabButtons[1].onclick = () => activateTab(tabContents[1], tabContents, tabButtons[1], tabButtons);
-tabButtons[2].onclick = () => activateTab(tabContents[2], tabContents, tabButtons[2], tabButtons);
-tabButtons[3].onclick = () => activateTab(tabContents[3], tabContents, tabButtons[3], tabButtons);
+tabButtons[2].onclick = () => activateTab(tabContents[0], tabContents, tabButtons[2], tabButtons);
+//tabButtons[2].onclick = () => activateTab(tabContents[2], tabContents, tabButtons[2], tabButtons);
 // <!-- ======= SKILLS-BUTTON -END- ======= -->
 // <!-- ======= SKILLS-BUTTON -END- ======= -->
 // <!-- ======= SKILLS-BUTTON -END- ======= -->
@@ -524,6 +524,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { containerClass: '.blog-animation', boxClass: '.blog-animation-box' },
         { containerClass: '.skills-animation', boxClass: '.skills-animation-box' },
         { containerClass: '.about-animation', boxClass: '.about-animation-box' },
+        { containerClass: '.milestone-animation', boxClass: '.milestone-animation-box' },
         { containerClass: '.portfolio-animation', boxClass: '.portfolio-animation-box' }
     ];
 
@@ -580,7 +581,12 @@ const observer = new IntersectionObserver((entries) => {
 
                 words.forEach((word, wordIndex) => {
                     const wordSpan = document.createElement('span');
-                    wordSpan.className = 'word';
+                    // RECOGNITION word ko green class do
+                    if (word === "RECOGNITION") {
+                        wordSpan.className = "word gr-word";
+                    } else {
+                        wordSpan.className = "word";
+                    }
                     wordSpan.style.whiteSpace = 'nowrap';
 
                     [...word].forEach((char) => {
